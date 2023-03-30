@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>851</height>
+    <height>741</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -456,7 +456,7 @@ QScrollBar:horizontal {
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>20</height>
+                           <height>30</height>
                           </size>
                          </property>
                          <property name="frameShape">
@@ -473,16 +473,16 @@ QScrollBar:horizontal {
                            <number>0</number>
                           </property>
                           <property name="topMargin">
-                           <number>10</number>
+                           <number>40</number>
                           </property>
                           <property name="rightMargin">
                            <number>0</number>
                           </property>
                           <property name="bottomMargin">
-                           <number>10</number>
+                           <number>20</number>
                           </property>
                           <item alignment="Qt::AlignHCenter">
-                           <widget class="QLabel" name="labelErrorAddIngredient">
+                           <widget class="QLabel" name="labelErrorAddCar">
                             <property name="font">
                              <font>
                               <weight>75</weight>
@@ -589,6 +589,18 @@ QScrollBar:horizontal {
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout">
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
                              <item>
                               <widget class="QLabel" name="label_19">
                                <property name="maximumSize">
@@ -649,7 +661,7 @@ QScrollBar:horizontal {
                                 </font>
                                </property>
                                <property name="text">
-                                <string>Год:</string>
+                                <string>Год выпуска:</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -812,7 +824,7 @@ p, li { white-space: pre-wrap; }
                              <item alignment="Qt::AlignBottom">
                               <widget class="QLabel" name="label_4">
                                <property name="text">
-                                <string>Стоисость аренды в сутки:</string>
+                                <string>Стоимость аренды в сутки:</string>
                                </property>
                               </widget>
                              </item>
@@ -829,6 +841,9 @@ p, li { white-space: pre-wrap; }
                                  <width>300</width>
                                  <height>16777215</height>
                                 </size>
+                               </property>
+                               <property name="inputMethodHints">
+                                <set>Qt::ImhNone</set>
                                </property>
                               </widget>
                              </item>
@@ -851,16 +866,22 @@ p, li { white-space: pre-wrap; }
                               <number>10</number>
                              </property>
                              <property name="topMargin">
-                              <number>0</number>
+                              <number>20</number>
                              </property>
                              <property name="rightMargin">
                               <number>10</number>
                              </property>
                              <property name="bottomMargin">
-                              <number>10</number>
+                              <number>20</number>
                              </property>
                              <item>
                               <widget class="QLabel" name="imageArea">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>650</height>
+                                </size>
+                               </property>
                                <property name="text">
                                 <string/>
                                </property>
@@ -870,6 +891,84 @@ p, li { white-space: pre-wrap; }
                            </widget>
                           </item>
                          </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignHCenter">
+                     <widget class="QFrame" name="frame">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_2">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item alignment="Qt::AlignRight">
+                        <widget class="QPushButton" name="saveCarBtn">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="../resources.qrc">
+                           <normaloff>:/icons/save.svg</normaloff>:/icons/save.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>24</width>
+                           <height>24</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item alignment="Qt::AlignHCenter">
+                        <widget class="QPushButton" name="previewImageBtn">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="../resources.qrc">
+                           <normaloff>:/icons/image.svg</normaloff>:/icons/image.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>24</width>
+                           <height>24</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item alignment="Qt::AlignLeft">
+                        <widget class="QPushButton" name="homeBtn">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="../resources.qrc">
+                           <normaloff>:/icons/home.svg</normaloff>:/icons/home.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>24</width>
+                           <height>24</height>
+                          </size>
+                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -898,84 +997,6 @@ p, li { white-space: pre-wrap; }
                  </item>
                 </layout>
                </widget>
-              </widget>
-             </item>
-             <item alignment="Qt::AlignHCenter">
-              <widget class="QFrame" name="frame">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item alignment="Qt::AlignRight">
-                 <widget class="QPushButton" name="saveCarBtn">
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../resources.qrc">
-                    <normaloff>:/icons/save.svg</normaloff>:/icons/save.svg</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>24</width>
-                    <height>24</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-                <item alignment="Qt::AlignHCenter">
-                 <widget class="QPushButton" name="previewImageBtn">
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../resources.qrc">
-                    <normaloff>:/icons/image.svg</normaloff>:/icons/image.svg</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>24</width>
-                    <height>24</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-                <item alignment="Qt::AlignLeft">
-                 <widget class="QPushButton" name="homeBtn">
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../resources.qrc">
-                    <normaloff>:/icons/home.svg</normaloff>:/icons/home.svg</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>24</width>
-                    <height>24</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
               </widget>
              </item>
             </layout>
