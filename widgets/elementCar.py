@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from PySide2 import QtGui
 from PySide2.QtGui import QFont
 from PySide2.QtWidgets import QWidget
@@ -6,11 +8,14 @@ from PySide2.QtCore import Signal
 from forms.ui_elementCar import Ui_elementCar
 
 
+IMAGE_CARS = "imageCars"
+
+
 class ElementCar(QWidget):
     _delete = Signal(str, str, str, str, str)
     _edit = Signal(str, str, str, str, str)
 
-    def __init__(self, userRole, model, year, specifications, imagePath, cost, parent=None):
+    def __init__(self, userRole, model, year, imagePath, specifications, cost, parent=None):
         super(ElementCar, self).__init__(parent)
         self.ui = Ui_elementCar()
         self.ui.setupUi(self)
@@ -21,8 +26,8 @@ class ElementCar(QWidget):
 
         self._model = model
         self._year = year
+        self._imagePath = f"{IMAGE_CARS}/{imagePath}"
         self._specifications = specifications
-        self._imagePath = imagePath
         self._cost = cost
 
         self.ui.model.setText(self._model)
@@ -31,17 +36,16 @@ class ElementCar(QWidget):
         self.ui.specifications.setFont(font)
         self.ui.cost.setText(self._cost)
 
+        if self.userRole != 'admin':
+            self.hideAdminElements()
+
         size = self.ui.imageArea.size()
         img = QtGui.QImage(self._imagePath)
         pixmap = QtGui.QPixmap(img.scaled(size))
         self.ui.imageArea.setPixmap(pixmap)
 
-        if self.userRole != 'admin':
-            self.hideAdminElements()
-
         self.ui.deleteCarBtn.clicked.connect(self.delete)
         self.ui.editCarBtn.clicked.connect(self.edit)
-        self.ui.editCarBtn.clicked.connect(self._showButtonBox)
 
     def hideAdminElements(self):
         self.ui.buttonBox.hide()

@@ -10,3 +10,7 @@ class SqlQueries:
     def deleteCar(model, year, image, specifications, cost):
         return ("DELETE FROM cars "
                 "WHERE model=%(model)s AND year=%(year)s AND image=%(image)s AND specifications=%(specifications)s AND cost=%(cost)s")
+
+    @staticmethod
+    def selectAllCars():
+        return "SELECT * FROM AutoService.cars"

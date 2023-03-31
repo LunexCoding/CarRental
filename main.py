@@ -43,6 +43,23 @@ class MainWindow(QMainWindow):
         self.ui.previewImageBtn.clicked.connect(lambda: self.showImage())
         self.ui.executeBtn.clicked.connect(lambda: self.executeCommand())
 
+        self.__loadData()
+
+    def __loadData(self):
+        fileSystem.makeDir(IMAGE_CARS, recreate=True)
+        for image in ftpServer.listDir():
+            ftpServer.downloadFile(image)
+
+        with databaseSession as db:
+            data = db.getRows(SqlQueries.selectAllCars())
+            for car in data:
+                self.ui.inputModel.setText(car["model"])
+                self.ui.inputModelYear.setText(str(car["year"]))
+                self.ui.inputSpecifications.setText(car["image"])
+                self.ui.inputImagePath.setText(car["specifications"])
+                self.ui.inputCost.setText(str(car["cost"]))
+                self.__carAdded()
+
     def hideAdminElements(self):
         self.ui.addCarBtn.hide()
 
@@ -63,7 +80,6 @@ class MainWindow(QMainWindow):
             self.showAdminElements()
 
     def _validateCommand(self):
-        print('call')
         commandLine = self.ui.inputCommand.toPlainText().replace("Shell>", "")
         if len(commandLine):
             commandArgs = commandLine.split()
@@ -178,10 +194,6 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
-    fileSystem.makeDir(IMAGE_CARS, recreate=True)
-    for image in ftpServer.listDir():
-        ftpServer.downloadFile(image)
-
     app = QApplication(sys.argv)
     widget = MainWindow()
     sys.exit(app.exec_())

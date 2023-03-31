@@ -37,7 +37,7 @@ class DatabaseConnection(object):
             self.dbCursor.execute(sql)
         self.dbConn.commit()
 
-    def get_row(self, sql, data=None):
+    def getRows(self, sql, data=None):
         self.dbCursor.execute(sql)
         return self.dbCursor.fetchall()
 
