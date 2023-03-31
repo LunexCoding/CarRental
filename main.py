@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
             self.ui.labelErrorAddCar.hide()
             self.__carAdded()
         else:
-            print('no')
+            ...
 
     def _validateAddCarForm(self):
         model = self.ui.inputModel.text()
@@ -86,7 +86,6 @@ class MainWindow(QMainWindow):
         widget.deleteLater()
 
     def __editCar(self, model, year, specifications, imagePath, cost):
-        print(model, year, specifications, imagePath, cost, sep="\n")
         self.ui.mainPages.setCurrentIndex(1)
         self.ui.inputModel.setText(model)
         self.ui.inputModelYear.setText(year)
