@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacenPEbhr.ui'
+## Form generated from reading UI file 'interfacehHMFCy.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(850, 741)
+        MainWindow.resize(983, 741)
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setStyleSheet(u"* {\n"
 "	border: None;\n"
@@ -66,6 +66,152 @@ class Ui_MainWindow(object):
 "#specificationsOptions {\n"
 "	border-top-right-radius: 0;\n"
 "	border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"/* VERTICAL SCROLLBAR */\n"
+" QScrollBar:verti"
+                        "cal {\n"
+"	border: none;\n"
+"    background: rgb(45, 45, 68);\n"
+"    width: 14px;\n"
+"    margin: 15px 0 15px 0;\n"
+"	border-radius: 0px;\n"
+" }\n"
+"\n"
+"/*  HANDLE BAR VERTICAL */\n"
+"QScrollBar::handle:vertical {	\n"
+"	background-color: rgb(80, 80, 122);\n"
+"	min-height: 30px;\n"
+"	border-radius: 7px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical:hover{	\n"
+"	background-color: #262a30;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical:pressed {	\n"
+"	background-color: #16191d;\n"
+"}\n"
+"\n"
+"/* BTN TOP - SCROLLBAR */\n"
+"QScrollBar::sub-line:vertical {\n"
+"	border: none;\n"
+"	background-color: rgb(59, 59, 90);\n"
+"	height: 15px;\n"
+"	border-top-left-radius: 7px;\n"
+"	border-top-right-radius: 7px;\n"
+"	subcontrol-position: top;\n"
+"	subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:vertical:hover {	\n"
+"	background-color: #262a30;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:vertical:pressed {	\n"
+"	background-color: #16191d;\n"
+"}\n"
+"\n"
+"/* BTN BOTTOM - SCROLLBAR */\n"
+"QScrollBar::add-line:vertical {\n"
+"	bord"
+                        "er: none;\n"
+"	background-color: rgb(59, 59, 90);\n"
+"	height: 15px;\n"
+"	border-bottom-left-radius: 7px;\n"
+"	border-bottom-right-radius: 7px;\n"
+"	subcontrol-position: bottom;\n"
+"	subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical:hover {	\n"
+"	background-color:#262a30;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical:pressed {	\n"
+"	background-color: #16191d;\n"
+"}\n"
+"\n"
+"/* RESET ARROW */\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+"	background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"	background: none;\n"
+"}\n"
+"\n"
+"\n"
+"/* HORIZONTAL SCROLLBAR */\n"
+" QScrollBar:horizontal {\n"
+"	border: none;\n"
+"    background: rgb(45, 45, 68);\n"
+"    height: 14px;\n"
+"    margin: 0 15px 0 15px;\n"
+"	border-radius: 0px;\n"
+" }\n"
+"\n"
+"/*  HANDLE BAR VERTICAL */\n"
+"QScrollBar::handle:horizontal {	\n"
+"	background-color: rgb(80, 80, 122);\n"
+"	min-width: 30px;\n"
+"	border-radius: 7px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:hori"
+                        "zontal:hover{	\n"
+"	background-color: #262a30;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal:pressed {	\n"
+"	background-color: #16191d;\n"
+"}\n"
+"\n"
+"/* BTN TOP - SCROLLBAR */\n"
+"QScrollBar::sub-line:horizontal {\n"
+"	border: none;\n"
+"	background-color: rgb(59, 59, 90);\n"
+"	width: 15px;\n"
+"	border-bottom-left-radius: 7px;\n"
+"	border-top-left-radius: 7px;\n"
+"	subcontrol-position: left;\n"
+"	subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:horizontal:hover {	\n"
+"	background-color: #262a30;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:horizontal:pressed {	\n"
+"	background-color: #16191d;\n"
+"}\n"
+"\n"
+"/* BTN BOTTOM - SCROLLBAR */\n"
+"QScrollBar::add-line:horizontal {\n"
+"	border: none;\n"
+"	background-color: rgb(59, 59, 90);\n"
+"	width: 15px;\n"
+"	border-bottom-left-radius: 7px;\n"
+"	border-top-left-radius: 7px;\n"
+"	subcontrol-position: right;\n"
+"	subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal:hover {	\n"
+"	background-color:#262a30;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:hor"
+                        "izontal:pressed {	\n"
+"	background-color: #16191d;\n"
+"}\n"
+"\n"
+"QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {\n"
+"	background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {\n"
+"    background: none;\n"
 "}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -174,29 +320,26 @@ class Ui_MainWindow(object):
         self.mainContentsContainer.setObjectName(u"mainContentsContainer")
         self.verticalLayout_15 = QVBoxLayout(self.mainContentsContainer)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(25, -1, -1, -1)
+        self.verticalLayout_15.setContentsMargins(10, -1, 10, -1)
         self.mainPages = QCustomStackedWidget(self.mainContentsContainer)
         self.mainPages.setObjectName(u"mainPages")
         self.pageCars = QWidget()
         self.pageCars.setObjectName(u"pageCars")
         self.verticalLayout_18 = QVBoxLayout(self.pageCars)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.frame_14 = QFrame(self.pageCars)
+        self.frame_2 = QFrame(self.pageCars)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.frame_14 = QFrame(self.frame_2)
         self.frame_14.setObjectName(u"frame_14")
         self.frame_14.setFrameShape(QFrame.StyledPanel)
         self.frame_14.setFrameShadow(QFrame.Raised)
-        self.formLayout = QFormLayout(self.frame_14)
-        self.formLayout.setObjectName(u"formLayout")
-        self.addCarBtn = QPushButton(self.frame_14)
-        self.addCarBtn.setObjectName(u"addCarBtn")
-        self.addCarBtn.setMaximumSize(QSize(16777215, 16777215))
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/plus.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.addCarBtn.setIcon(icon3)
-        self.addCarBtn.setIconSize(QSize(24, 24))
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.addCarBtn)
-
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_14)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(-1, -1, 0, -1)
         self.label_12 = QLabel(self.frame_14)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setMinimumSize(QSize(0, 0))
@@ -209,10 +352,33 @@ class Ui_MainWindow(object):
         self.label_12.setStyleSheet(u"")
         self.label_12.setAlignment(Qt.AlignCenter)
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label_12)
+        self.horizontalLayout_3.addWidget(self.label_12)
+
+        self.addCarBtn = QPushButton(self.frame_14)
+        self.addCarBtn.setObjectName(u"addCarBtn")
+        self.addCarBtn.setMaximumSize(QSize(16777215, 16777215))
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/plus.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.addCarBtn.setIcon(icon3)
+        self.addCarBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_3.addWidget(self.addCarBtn)
 
 
-        self.verticalLayout_18.addWidget(self.frame_14, 0, Qt.AlignHCenter)
+        self.horizontalLayout_6.addWidget(self.frame_14, 0, Qt.AlignHCenter)
+
+        self.shellBtn = QPushButton(self.frame_2)
+        self.shellBtn.setObjectName(u"shellBtn")
+        self.shellBtn.setMaximumSize(QSize(25, 16777215))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/key.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.shellBtn.setIcon(icon4)
+        self.shellBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_6.addWidget(self.shellBtn)
+
+
+        self.verticalLayout_18.addWidget(self.frame_2)
 
         self.scrollArea = QScrollArea(self.pageCars)
         self.scrollArea.setObjectName(u"scrollArea")
@@ -230,13 +396,13 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaIngredients = QWidget()
         self.scrollAreaIngredients.setObjectName(u"scrollAreaIngredients")
-        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 780, 548))
+        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 927, 530))
         self.horizontalLayout_13 = QHBoxLayout(self.scrollAreaIngredients)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.carLayout = QVBoxLayout()
         self.carLayout.setSpacing(0)
         self.carLayout.setObjectName(u"carLayout")
-        self.carLayout.setContentsMargins(40, -1, -1, -1)
+        self.carLayout.setContentsMargins(0, -1, -1, -1)
 
         self.horizontalLayout_13.addLayout(self.carLayout)
 
@@ -371,6 +537,7 @@ class Ui_MainWindow(object):
         self.inputImagePath.setObjectName(u"inputImagePath")
         self.inputImagePath.setMinimumSize(QSize(200, 0))
         self.inputImagePath.setMaximumSize(QSize(300, 16777215))
+        self.inputImagePath.setClearButtonEnabled(True)
 
         self.verticalLayout.addWidget(self.inputImagePath)
 
@@ -420,6 +587,7 @@ class Ui_MainWindow(object):
         self.inputCost.setMinimumSize(QSize(200, 0))
         self.inputCost.setMaximumSize(QSize(300, 16777215))
         self.inputCost.setInputMethodHints(Qt.ImhNone)
+        self.inputCost.setClearButtonEnabled(True)
 
         self.verticalLayout.addWidget(self.inputCost)
 
@@ -459,27 +627,27 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.saveCarBtn = QPushButton(self.frame)
         self.saveCarBtn.setObjectName(u"saveCarBtn")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/save.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.saveCarBtn.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/save.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.saveCarBtn.setIcon(icon5)
         self.saveCarBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.saveCarBtn, 0, Qt.AlignRight)
 
         self.previewImageBtn = QPushButton(self.frame)
         self.previewImageBtn.setObjectName(u"previewImageBtn")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/image.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.previewImageBtn.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/image.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.previewImageBtn.setIcon(icon6)
         self.previewImageBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.previewImageBtn, 0, Qt.AlignHCenter)
 
         self.homeBtn = QPushButton(self.frame)
         self.homeBtn.setObjectName(u"homeBtn")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.homeBtn.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.homeBtn.setIcon(icon7)
         self.homeBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.homeBtn, 0, Qt.AlignLeft)
@@ -491,17 +659,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_21.addWidget(self.frame_11)
 
         self.mainPages.addWidget(self.pageAddCar)
-        self.pageEditCar = QWidget()
-        self.pageEditCar.setObjectName(u"pageEditCar")
-        self.verticalLayout_2 = QVBoxLayout(self.pageEditCar)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label = QLabel(self.pageEditCar)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font2)
-
-        self.verticalLayout_2.addWidget(self.label, 0, Qt.AlignHCenter|Qt.AlignVCenter)
-
-        self.mainPages.addWidget(self.pageEditCar)
 
         self.verticalLayout_15.addWidget(self.mainPages)
 
@@ -550,7 +707,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainPages.setCurrentIndex(0)
+        self.mainPages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -575,8 +732,9 @@ class Ui_MainWindow(object):
         self.closeBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close Window", None))
 #endif // QT_CONFIG(tooltip)
         self.closeBtn.setText("")
-        self.addCarBtn.setText("")
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0438 \u0432 \u0430\u0440\u0435\u043d\u0434\u0443", None))
+        self.addCarBtn.setText("")
+        self.shellBtn.setText("")
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f", None))
         self.labelErrorAddCar.setText(QCoreApplication.translate("MainWindow", u"All fields must be filled", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u041c\u043e\u0434\u0435\u043b\u044c:", None))
@@ -620,7 +778,6 @@ class Ui_MainWindow(object):
         self.saveCarBtn.setText("")
         self.previewImageBtn.setText("")
         self.homeBtn.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u043f\u0440\u0435\u0434\u043e\u0436\u0435\u043d\u0438\u044f \u043e\u0431 \u0430\u0440\u0435\u043d\u0434\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Copyright LunexCoding", None))
     # retranslateUi
 

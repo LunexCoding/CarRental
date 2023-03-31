@@ -14,6 +14,9 @@ class MainWindow(QMainWindow):
         loadJsonStyle(self, self.ui)
         self.show()
 
+        font = QFont('MS Shell Dql 2', 10)
+        self.ui.inputSpecifications.setFont(font)
+
         self.ui.labelErrorAddCar.hide()
 
         self.flowCarLayout = FlowLayout()
@@ -63,17 +66,34 @@ class MainWindow(QMainWindow):
         itemCar = ElementCar(
             self.ui.inputModel.text(),
             self.ui.inputModelYear.text(),
+            self.ui.inputSpecifications.toPlainText(),
             self.ui.inputImagePath.text(),
             self.ui.inputCost.text()
         )
         self.flowCarLayout.addWidget(itemCar)
         itemCar._delete.connect(self.__deleteCar)
-        # itemCar._edit.connect(self.addIngredientToStorage)
+        itemCar._edit.connect(self.__editCar)
+
+        self.ui.inputModel.clear()
+        self.ui.inputModelYear.clear()
+        self.ui.inputSpecifications.setText("характеристика\n" * 8 + "характеристика")
+        self.ui.inputImagePath.clear()
+        self.ui.inputCost.clear()
 
     def __deleteCar(self):
         widget = self.sender()
         self.flowCarLayout.removeWidget(widget)
         widget.deleteLater()
+
+    def __editCar(self, model, year, specifications, imagePath, cost):
+        print(model, year, specifications, imagePath, cost, sep="\n")
+        self.ui.mainPages.setCurrentIndex(1)
+        self.ui.inputModel.setText(model)
+        self.ui.inputModelYear.setText(year)
+        self.ui.inputSpecifications.setText(specifications)
+        self.ui.inputImagePath.setText(imagePath)
+        self.ui.inputCost.setText(cost)
+        self.showImage()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
