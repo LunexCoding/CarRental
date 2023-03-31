@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacehHMFCy.ui'
+## Form generated from reading UI file 'interfacesSzdQW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(983, 741)
+        MainWindow.resize(1034, 741)
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setStyleSheet(u"* {\n"
 "	border: None;\n"
@@ -396,7 +396,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaIngredients = QWidget()
         self.scrollAreaIngredients.setObjectName(u"scrollAreaIngredients")
-        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 927, 530))
+        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 978, 530))
         self.horizontalLayout_13 = QHBoxLayout(self.scrollAreaIngredients)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.carLayout = QVBoxLayout()
@@ -659,6 +659,87 @@ class Ui_MainWindow(object):
         self.verticalLayout_21.addWidget(self.frame_11)
 
         self.mainPages.addWidget(self.pageAddCar)
+        self.pageShell = QWidget()
+        self.pageShell.setObjectName(u"pageShell")
+        self.verticalLayout_2 = QVBoxLayout(self.pageShell)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.frame_13 = QFrame(self.pageShell)
+        self.frame_13.setObjectName(u"frame_13")
+        self.frame_13.setMaximumSize(QSize(16777215, 100))
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_27 = QVBoxLayout(self.frame_13)
+        self.verticalLayout_27.setSpacing(0)
+        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
+        self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
+        self.label_17 = QLabel(self.frame_13)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setFont(font2)
+
+        self.verticalLayout_27.addWidget(self.label_17, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+        self.frame_9 = QFrame(self.frame_13)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setMinimumSize(QSize(0, 30))
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 40, 0, 20)
+        self.labelErrorShell = QLabel(self.frame_9)
+        self.labelErrorShell.setObjectName(u"labelErrorShell")
+        self.labelErrorShell.setFont(font3)
+        self.labelErrorShell.setStyleSheet(u"color: red")
+
+        self.verticalLayout_7.addWidget(self.labelErrorShell, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_27.addWidget(self.frame_9)
+
+
+        self.verticalLayout_2.addWidget(self.frame_13)
+
+        self.inputCommand = QTextEdit(self.pageShell)
+        self.inputCommand.setObjectName(u"inputCommand")
+
+        self.verticalLayout_2.addWidget(self.inputCommand)
+
+        self.frame_15 = QFrame(self.pageShell)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.frame_15)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.frame_17 = QFrame(self.frame_15)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_9 = QHBoxLayout(self.frame_17)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.executeBtn = QPushButton(self.frame_17)
+        self.executeBtn.setObjectName(u"executeBtn")
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/zap.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.executeBtn.setIcon(icon8)
+        self.executeBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_9.addWidget(self.executeBtn)
+
+        self.home1Btn = QPushButton(self.frame_17)
+        self.home1Btn.setObjectName(u"home1Btn")
+        self.home1Btn.setIcon(icon7)
+        self.home1Btn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_9.addWidget(self.home1Btn)
+
+
+        self.verticalLayout_4.addWidget(self.frame_17, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.verticalLayout_2.addWidget(self.frame_15, 0, Qt.AlignVCenter)
+
+        self.mainPages.addWidget(self.pageShell)
 
         self.verticalLayout_15.addWidget(self.mainPages)
 
@@ -707,7 +788,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainPages.setCurrentIndex(1)
+        self.mainPages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -778,6 +859,15 @@ class Ui_MainWindow(object):
         self.saveCarBtn.setText("")
         self.previewImageBtn.setText("")
         self.homeBtn.setText("")
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0440\u043c\u0438\u043d\u0430\u043b", None))
+        self.labelErrorShell.setText(QCoreApplication.translate("MainWindow", u"All fields must be filled", None))
+        self.inputCommand.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Shell&gt;</span></p></body></html>", None))
+        self.executeBtn.setText("")
+        self.home1Btn.setText("")
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Copyright LunexCoding", None))
     # retranslateUi
 

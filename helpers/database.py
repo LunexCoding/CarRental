@@ -3,10 +3,10 @@ from decouple import config
 
 
 db_config = {
-    'host': config("DBHOST", default=""),
-    'port': int(config("DBPORT", default="")),
-    'user': config("DBUSER", default=""),
-    'password': config("DBPASSWORD", default=""),
+    'host': config("DB_HOST", default=""),
+    'port': int(config("DB_PORT", default="")),
+    'user': config("DB_USER", default=""),
+    'password': config("DB_PASSWORD", default=""),
     'database': "AutoService",
     'cursorclass': pymysql.cursors.DictCursor
 }

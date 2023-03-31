@@ -31,7 +31,9 @@
 					"navigationButtons": [
 						{
                             "homeBtn": "pageCars",
-                            "addCarBtn": "pageAddCar"
+                            "home1Btn": "pageCars",
+                            "addCarBtn": "pageAddCar",
+                            "shellBtn": "pageShell"
 						}
 					]
 				}

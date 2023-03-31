@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'elementCarIsbYAP.ui'
+## Form generated from reading UI file 'elementCarHwKaXI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -45,6 +45,7 @@ class Ui_elementCar(object):
 "}")
         self.verticalLayout_2 = QVBoxLayout(elementCar)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(9, 0, -1, 0)
         self.groupBox = QGroupBox(elementCar)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(0, 0))
@@ -53,7 +54,7 @@ class Ui_elementCar(object):
         self.horizontalLayout = QHBoxLayout(self.groupBox)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 15, 0, 0)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.frame_2 = QFrame(self.groupBox)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setMaximumSize(QSize(16777215, 16777215))
@@ -72,8 +73,8 @@ class Ui_elementCar(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 10)
         self.imageArea = QLabel(self.frame_3)
         self.imageArea.setObjectName(u"imageArea")
-        self.imageArea.setMinimumSize(QSize(520, 300))
-        self.imageArea.setMaximumSize(QSize(520, 300))
+        self.imageArea.setMinimumSize(QSize(520, 315))
+        self.imageArea.setMaximumSize(QSize(520, 315))
 
         self.verticalLayout_4.addWidget(self.imageArea)
 

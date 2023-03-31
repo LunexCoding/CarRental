@@ -51,6 +51,15 @@ QTextEdit {
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>9</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="minimumSize">
@@ -79,7 +88,7 @@ QTextEdit {
        <number>0</number>
       </property>
       <property name="topMargin">
-       <number>15</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
        <number>0</number>
@@ -146,13 +155,13 @@ QTextEdit {
               <property name="minimumSize">
                <size>
                 <width>520</width>
-                <height>300</height>
+                <height>315</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>520</width>
-                <height>300</height>
+                <height>315</height>
                </size>
               </property>
               <property name="text">

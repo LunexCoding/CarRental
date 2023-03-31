@@ -10,12 +10,14 @@ class ElementCar(QWidget):
     _delete = Signal(str, str, str, str, str)
     _edit = Signal(str, str, str, str, str)
 
-    def __init__(self, model, year, specifications, imagePath, cost, parent=None):
+    def __init__(self, userRole, model, year, specifications, imagePath, cost, parent=None):
         super(ElementCar, self).__init__(parent)
         self.ui = Ui_elementCar()
         self.ui.setupUi(self)
 
         font = QFont('MS Shell Dql 2', 10)
+
+        self.userRole = userRole
 
         self._model = model
         self._year = year
@@ -34,11 +36,15 @@ class ElementCar(QWidget):
         pixmap = QtGui.QPixmap(img.scaled(size))
         self.ui.imageArea.setPixmap(pixmap)
 
+        if self.userRole != 'admin':
+            self.hideAdminElements()
+
         self.ui.deleteCarBtn.clicked.connect(self.delete)
         self.ui.editCarBtn.clicked.connect(self.edit)
         self.ui.editCarBtn.clicked.connect(self._showButtonBox)
 
-        # self._hideButtonBox()
+    def hideAdminElements(self):
+        self.ui.buttonBox.hide()
 
     def delete(self):
         self._delete.emit(self._model, self._year, self._imagePath, self._specifications, self._cost)

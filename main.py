@@ -1,3 +1,4 @@
+from decouple import config
 from pathlib import Path
 
 from Custom_Widgets.Widgets import *
@@ -24,20 +25,64 @@ class MainWindow(QMainWindow):
         loadJsonStyle(self, self.ui)
         self.show()
 
+        self.userRole = "user"
+
         font = QFont('MS Shell Dql 2', 10)
         self.ui.inputSpecifications.setFont(font)
+        self.ui.inputCommand.setFont(font)
 
         self.ui.labelErrorAddCar.hide()
+        self.ui.labelErrorShell.hide()
+        if self.userRole != 'admin':
+            self.hideAdminElements()
 
         self.flowCarLayout = FlowLayout()
         self.ui.carLayout.addLayout(self.flowCarLayout)
 
         self.ui.saveCarBtn.clicked.connect(lambda: self.addCar())
         self.ui.previewImageBtn.clicked.connect(lambda: self.showImage())
+        self.ui.executeBtn.clicked.connect(lambda: self.executeCommand())
+
+    def hideAdminElements(self):
+        self.ui.addCarBtn.hide()
+
+    def showAdminElements(self):
+        self.ui.addCarBtn.show()
+
+    def showErrorLabelShell(self, message):
+        self.ui.labelErrorShell.setText(message)
+        self.ui.labelErrorShell.show()
 
     def showErrorLabelAddCar(self, message):
         self.ui.labelErrorAddCar.setText(message)
         self.ui.labelErrorAddCar.show()
+
+    def executeCommand(self):
+        if self._validateCommand():
+            self.userRole = "admin"
+            self.showAdminElements()
+
+    def _validateCommand(self):
+        print('call')
+        commandLine = self.ui.inputCommand.toPlainText().replace("Shell>", "")
+        if len(commandLine):
+            commandArgs = commandLine.split()
+            command = commandArgs.pop(0)
+            if command == "admin":
+                if len(commandArgs):
+                    token = commandArgs.pop(0)
+                    if token == config("ADMIN_TOKEN", default=""):
+                        self.ui.labelErrorShell.hide()
+                        self.ui.inputCommand.setText("Введен верный токен!")
+                        return True
+                    else:
+                        self.showErrorLabelShell("Неверный токен!")
+                else:
+                    self.showErrorLabelShell("Пропущен аргумент!")
+            else:
+                self.showErrorLabelShell("Неверная команда!")
+        else:
+            self.showErrorLabelShell("Введите команду!")
 
     def addCar(self):
         if self._validateAddCarForm():
@@ -58,11 +103,11 @@ class MainWindow(QMainWindow):
             if "характеристика" in specifications:
                 self.showErrorLabelAddCar("Все характеристики должны быть указаны!")
                 return False
-
             with databaseSession as db:
                 db.execute(
                     SqlQueries.insertCar(model, year, image, specifications, cost),
                     dict(
+                        userRole=self.userRole,
                         model=model,
                         year=year,
                         image=relativeImagePath,
@@ -86,6 +131,7 @@ class MainWindow(QMainWindow):
 
     def __carAdded(self):
         itemCar = ElementCar(
+            self.userRole,
             self.ui.inputModel.text(),
             self.ui.inputModelYear.text(),
             self.ui.inputSpecifications.toPlainText(),
