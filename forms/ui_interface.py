@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceNYtkUk.ui'
+## Form generated from reading UI file 'interfacenPEbhr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -174,6 +174,7 @@ class Ui_MainWindow(object):
         self.mainContentsContainer.setObjectName(u"mainContentsContainer")
         self.verticalLayout_15 = QVBoxLayout(self.mainContentsContainer)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(25, -1, -1, -1)
         self.mainPages = QCustomStackedWidget(self.mainContentsContainer)
         self.mainPages.setObjectName(u"mainPages")
         self.pageCars = QWidget()
@@ -229,14 +230,15 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaIngredients = QWidget()
         self.scrollAreaIngredients.setObjectName(u"scrollAreaIngredients")
-        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 65, 20))
+        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 780, 548))
         self.horizontalLayout_13 = QHBoxLayout(self.scrollAreaIngredients)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.ingredientLayout = QVBoxLayout()
-        self.ingredientLayout.setSpacing(0)
-        self.ingredientLayout.setObjectName(u"ingredientLayout")
+        self.carLayout = QVBoxLayout()
+        self.carLayout.setSpacing(0)
+        self.carLayout.setObjectName(u"carLayout")
+        self.carLayout.setContentsMargins(40, -1, -1, -1)
 
-        self.horizontalLayout_13.addLayout(self.ingredientLayout)
+        self.horizontalLayout_13.addLayout(self.carLayout)
 
         self.scrollArea.setWidget(self.scrollAreaIngredients)
 
@@ -521,6 +523,11 @@ class Ui_MainWindow(object):
         self.frame_10.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.label_15 = QLabel(self.frame_10)
+        self.label_15.setObjectName(u"label_15")
+
+        self.horizontalLayout_12.addWidget(self.label_15)
+
         self.sizeGrip = QFrame(self.frame_10)
         self.sizeGrip.setObjectName(u"sizeGrip")
         self.sizeGrip.setMinimumSize(QSize(30, 30))
@@ -529,11 +536,6 @@ class Ui_MainWindow(object):
         self.sizeGrip.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_12.addWidget(self.sizeGrip)
-
-        self.label_15 = QLabel(self.frame_10)
-        self.label_15.setObjectName(u"label_15")
-
-        self.horizontalLayout_12.addWidget(self.label_15)
 
 
         self.horizontalLayout_11.addWidget(self.frame_10)
@@ -548,7 +550,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainPages.setCurrentIndex(1)
+        self.mainPages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
