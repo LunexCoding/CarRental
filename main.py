@@ -1,6 +1,9 @@
 from Custom_Widgets.Widgets import *
+from PySide2.examples.widgets.layouts.flowlayout import FlowLayout
 
 from forms.ui_interface import Ui_MainWindow
+from widgets.flowLayout import FlowLayout
+from widgets.elementCar import ElementCar
 
 
 class MainWindow(QMainWindow):
@@ -13,6 +16,9 @@ class MainWindow(QMainWindow):
 
         self.ui.labelErrorAddCar.hide()
 
+        self.flowCarLayout = FlowLayout()
+        self.ui.carLayout.addLayout(self.flowCarLayout)
+
         self.ui.saveCarBtn.clicked.connect(lambda: self.addCar())
         self.ui.previewImageBtn.clicked.connect(lambda: self.showImage())
 
@@ -23,7 +29,7 @@ class MainWindow(QMainWindow):
     def addCar(self):
         if self._validateAddCarForm():
             self.ui.labelErrorAddCar.hide()
-            print("complete")
+            self.__carAdded()
         else:
             print('no')
 
@@ -53,6 +59,21 @@ class MainWindow(QMainWindow):
         else:
             self.showErrorLabelAddCar("Не указан путь к изображению!")
 
+    def __carAdded(self):
+        itemCar = ElementCar(
+            self.ui.inputModel.text(),
+            self.ui.inputModelYear.text(),
+            self.ui.inputImagePath.text(),
+            self.ui.inputCost.text()
+        )
+        self.flowCarLayout.addWidget(itemCar)
+        itemCar._delete.connect(self.__deleteCar)
+        # itemCar._edit.connect(self.addIngredientToStorage)
+
+    def __deleteCar(self):
+        widget = self.sender()
+        self.flowCarLayout.removeWidget(widget)
+        widget.deleteLater()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
