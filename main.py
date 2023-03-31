@@ -1,9 +1,19 @@
+from pathlib import Path
+
 from Custom_Widgets.Widgets import *
 from PySide2.examples.widgets.layouts.flowlayout import FlowLayout
 
 from forms.ui_interface import Ui_MainWindow
 from widgets.flowLayout import FlowLayout
 from widgets.elementCar import ElementCar
+
+from helpers.fileSystem import fileSystem
+from helpers.database import databaseSession
+from helpers.sqlQueries import SqlQueries
+from helpers.server import ftpServer
+
+
+IMAGE_CARS = Path("imageCars")
 
 
 class MainWindow(QMainWindow):
@@ -33,13 +43,12 @@ class MainWindow(QMainWindow):
         if self._validateAddCarForm():
             self.ui.labelErrorAddCar.hide()
             self.__carAdded()
-        else:
-            ...
 
     def _validateAddCarForm(self):
         model = self.ui.inputModel.text()
         year = self.ui.inputModelYear.text()
         image = self.ui.inputImagePath.text()
+        relativeImagePath = Path(image).name
         specifications = self.ui.inputSpecifications.toPlainText()
         cost = self.ui.inputCost.text()
         if (all([len(model), len(year), len(image), len(specifications), len(cost)])):
@@ -49,6 +58,19 @@ class MainWindow(QMainWindow):
             if "характеристика" in specifications:
                 self.showErrorLabelAddCar("Все характеристики должны быть указаны!")
                 return False
+
+            with databaseSession as db:
+                db.execute(
+                    SqlQueries.insertCar(model, year, image, specifications, cost),
+                    dict(
+                        model=model,
+                        year=year,
+                        image=relativeImagePath,
+                        specifications=specifications,
+                        cost=cost
+                    )
+                )
+            ftpServer.uploadFile(image)
             return True
         self.showErrorLabelAddCar("Все поля должны быть заполнены!")
         return False
@@ -80,21 +102,40 @@ class MainWindow(QMainWindow):
         self.ui.inputImagePath.clear()
         self.ui.inputCost.clear()
 
-    def __deleteCar(self):
+    def __deleteCar(self, model, year, image, specifications, cost):
         widget = self.sender()
         self.flowCarLayout.removeWidget(widget)
         widget.deleteLater()
+        image = Path(image).name
+        with databaseSession as db:
+            db.execute(
+                SqlQueries.deleteCar(model, year, image, specifications, cost),
+                dict(
+                    model=model,
+                    year=year,
+                    image=image,
+                    specifications=specifications,
+                    cost=cost
+                )
+            )
+        ftpServer.deleteFile(image)
+        fileSystem.remove(IMAGE_CARS / image)
 
-    def __editCar(self, model, year, specifications, imagePath, cost):
+    def __editCar(self, model, year, imagePath, specifications, cost):
         self.ui.mainPages.setCurrentIndex(1)
         self.ui.inputModel.setText(model)
         self.ui.inputModelYear.setText(year)
-        self.ui.inputSpecifications.setText(specifications)
         self.ui.inputImagePath.setText(imagePath)
+        self.ui.inputSpecifications.setText(specifications)
         self.ui.inputCost.setText(cost)
         self.showImage()
 
+
 if __name__ == "__main__":
+    fileSystem.makeDir(IMAGE_CARS, recreate=True)
+    for image in ftpServer.listDir():
+        ftpServer.downloadFile(image)
+
     app = QApplication(sys.argv)
     widget = MainWindow()
     sys.exit(app.exec_())

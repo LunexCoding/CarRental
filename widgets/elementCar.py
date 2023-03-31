@@ -7,7 +7,7 @@ from forms.ui_elementCar import Ui_elementCar
 
 
 class ElementCar(QWidget):
-    _delete = Signal()
+    _delete = Signal(str, str, str, str, str)
     _edit = Signal(str, str, str, str, str)
 
     def __init__(self, model, year, specifications, imagePath, cost, parent=None):
@@ -41,10 +41,10 @@ class ElementCar(QWidget):
         # self._hideButtonBox()
 
     def delete(self):
-        self._delete.emit()
+        self._delete.emit(self._model, self._year, self._imagePath, self._specifications, self._cost)
 
     def edit(self):
-        self._edit.emit(self._model, self._year, self._specifications, self._imagePath, self._cost)
+        self._edit.emit(self._model, self._year, self._imagePath, self._specifications, self._cost)
 
     def _showButtonBox(self):
         self.ui.buttonBox.show()
