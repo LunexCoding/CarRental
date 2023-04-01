@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacesSzdQW.ui'
+## Form generated from reading UI file 'interfaceaIAtjM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1034, 741)
+        MainWindow.resize(850, 741)
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setStyleSheet(u"* {\n"
 "	border: None;\n"
@@ -357,6 +357,7 @@ class Ui_MainWindow(object):
         self.addCarBtn = QPushButton(self.frame_14)
         self.addCarBtn.setObjectName(u"addCarBtn")
         self.addCarBtn.setMaximumSize(QSize(16777215, 16777215))
+        self.addCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
         icon3 = QIcon()
         icon3.addFile(u":/icons/plus.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.addCarBtn.setIcon(icon3)
@@ -366,16 +367,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_6.addWidget(self.frame_14, 0, Qt.AlignHCenter)
-
-        self.shellBtn = QPushButton(self.frame_2)
-        self.shellBtn.setObjectName(u"shellBtn")
-        self.shellBtn.setMaximumSize(QSize(25, 16777215))
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/key.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.shellBtn.setIcon(icon4)
-        self.shellBtn.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_6.addWidget(self.shellBtn)
 
 
         self.verticalLayout_18.addWidget(self.frame_2)
@@ -396,7 +387,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaIngredients = QWidget()
         self.scrollAreaIngredients.setObjectName(u"scrollAreaIngredients")
-        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 978, 530))
+        self.scrollAreaIngredients.setGeometry(QRect(0, 0, 794, 530))
         self.horizontalLayout_13 = QHBoxLayout(self.scrollAreaIngredients)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.carLayout = QVBoxLayout()
@@ -571,6 +562,7 @@ class Ui_MainWindow(object):
         self.inputSpecifications = QTextEdit(self.frame_18)
         self.inputSpecifications.setObjectName(u"inputSpecifications")
         self.inputSpecifications.setMaximumSize(QSize(150, 170))
+        self.inputSpecifications.viewport().setProperty("cursor", QCursor(Qt.IBeamCursor))
 
         self.horizontalLayout_15.addWidget(self.inputSpecifications)
 
@@ -627,27 +619,30 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.saveCarBtn = QPushButton(self.frame)
         self.saveCarBtn.setObjectName(u"saveCarBtn")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/save.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.saveCarBtn.setIcon(icon5)
+        self.saveCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/save.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.saveCarBtn.setIcon(icon4)
         self.saveCarBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.saveCarBtn, 0, Qt.AlignRight)
 
         self.previewImageBtn = QPushButton(self.frame)
         self.previewImageBtn.setObjectName(u"previewImageBtn")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/image.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.previewImageBtn.setIcon(icon6)
+        self.previewImageBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/image.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.previewImageBtn.setIcon(icon5)
         self.previewImageBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.previewImageBtn, 0, Qt.AlignHCenter)
 
         self.homeBtn = QPushButton(self.frame)
         self.homeBtn.setObjectName(u"homeBtn")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.homeBtn.setIcon(icon7)
+        self.homeBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.homeBtn.setIcon(icon6)
         self.homeBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.homeBtn, 0, Qt.AlignLeft)
@@ -719,19 +714,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.executeBtn = QPushButton(self.frame_17)
         self.executeBtn.setObjectName(u"executeBtn")
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/zap.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.executeBtn.setIcon(icon8)
+        self.executeBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/zap.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.executeBtn.setIcon(icon7)
         self.executeBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_9.addWidget(self.executeBtn)
 
-        self.home1Btn = QPushButton(self.frame_17)
-        self.home1Btn.setObjectName(u"home1Btn")
-        self.home1Btn.setIcon(icon7)
-        self.home1Btn.setIconSize(QSize(24, 24))
+        self.choiceRolePage = QPushButton(self.frame_17)
+        self.choiceRolePage.setObjectName(u"choiceRolePage")
+        self.choiceRolePage.setCursor(QCursor(Qt.PointingHandCursor))
+        self.choiceRolePage.setIcon(icon6)
+        self.choiceRolePage.setIconSize(QSize(24, 24))
 
-        self.horizontalLayout_9.addWidget(self.home1Btn)
+        self.horizontalLayout_9.addWidget(self.choiceRolePage)
 
 
         self.verticalLayout_4.addWidget(self.frame_17, 0, Qt.AlignHCenter|Qt.AlignVCenter)
@@ -740,6 +737,60 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.frame_15, 0, Qt.AlignVCenter)
 
         self.mainPages.addWidget(self.pageShell)
+        self.pageChoiceRole = QWidget()
+        self.pageChoiceRole.setObjectName(u"pageChoiceRole")
+        self.verticalLayout_9 = QVBoxLayout(self.pageChoiceRole)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.frame_19 = QFrame(self.pageChoiceRole)
+        self.frame_19.setObjectName(u"frame_19")
+        self.frame_19.setFrameShape(QFrame.StyledPanel)
+        self.frame_19.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_19)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.label = QLabel(self.frame_19)
+        self.label.setObjectName(u"label")
+        self.label.setFont(font2)
+
+        self.verticalLayout_8.addWidget(self.label, 0, Qt.AlignHCenter)
+
+        self.frame_20 = QFrame(self.frame_19)
+        self.frame_20.setObjectName(u"frame_20")
+        self.frame_20.setStyleSheet(u"")
+        self.frame_20.setFrameShape(QFrame.StyledPanel)
+        self.frame_20.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_10 = QHBoxLayout(self.frame_20)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.userModeBtn = QPushButton(self.frame_20)
+        self.userModeBtn.setObjectName(u"userModeBtn")
+        self.userModeBtn.setFont(font)
+        self.userModeBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/shopping-cart.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.userModeBtn.setIcon(icon8)
+        self.userModeBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_10.addWidget(self.userModeBtn, 0, Qt.AlignHCenter)
+
+        self.adminModeBtn = QPushButton(self.frame_20)
+        self.adminModeBtn.setObjectName(u"adminModeBtn")
+        self.adminModeBtn.setFont(font)
+        self.adminModeBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.adminModeBtn.setMouseTracking(False)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/user.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.adminModeBtn.setIcon(icon9)
+        self.adminModeBtn.setIconSize(QSize(24, 24))
+        self.adminModeBtn.setCheckable(False)
+
+        self.horizontalLayout_10.addWidget(self.adminModeBtn, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_8.addWidget(self.frame_20)
+
+
+        self.verticalLayout_9.addWidget(self.frame_19)
+
+        self.mainPages.addWidget(self.pageChoiceRole)
 
         self.verticalLayout_15.addWidget(self.mainPages)
 
@@ -788,7 +839,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainPages.setCurrentIndex(0)
+        self.mainPages.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -815,7 +866,6 @@ class Ui_MainWindow(object):
         self.closeBtn.setText("")
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0438 \u0432 \u0430\u0440\u0435\u043d\u0434\u0443", None))
         self.addCarBtn.setText("")
-        self.shellBtn.setText("")
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f", None))
         self.labelErrorAddCar.setText(QCoreApplication.translate("MainWindow", u"All fields must be filled", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u041c\u043e\u0434\u0435\u043b\u044c:", None))
@@ -867,7 +917,10 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Shell&gt;</span></p></body></html>", None))
         self.executeBtn.setText("")
-        self.home1Btn.setText("")
+        self.choiceRolePage.setText("")
+        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u043e\u043b\u044c", None))
+        self.userModeBtn.setText(QCoreApplication.translate("MainWindow", u" \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c", None))
+        self.adminModeBtn.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Copyright LunexCoding", None))
     # retranslateUi
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1034</width>
+    <width>850</width>
     <height>741</height>
    </rect>
   </property>
@@ -424,7 +424,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
              <item>
               <widget class="QCustomStackedWidget" name="mainPages">
                <property name="currentIndex">
-                <number>0</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="pageCars">
                 <layout class="QVBoxLayout" name="verticalLayout_18">
@@ -489,6 +489,9 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                            <height>16777215</height>
                           </size>
                          </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -505,29 +508,6 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                         </widget>
                        </item>
                       </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="shellBtn">
-                      <property name="maximumSize">
-                       <size>
-                        <width>25</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="../resources.qrc">
-                        <normaloff>:/icons/key.svg</normaloff>:/icons/key.svg</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -558,7 +538,7 @@ QScrollBar:horizontal {
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>978</width>
+                      <width>794</width>
                       <height>530</height>
                      </rect>
                     </property>
@@ -993,6 +973,9 @@ p, li { white-space: pre-wrap; }
                                     <height>170</height>
                                    </size>
                                   </property>
+                                  <property name="cursor" stdset="0">
+                                   <cursorShape>IBeamCursor</cursorShape>
+                                  </property>
                                   <property name="html">
                                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1117,6 +1100,9 @@ p, li { white-space: pre-wrap; }
                        </property>
                        <item alignment="Qt::AlignRight">
                         <widget class="QPushButton" name="saveCarBtn">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1134,6 +1120,9 @@ p, li { white-space: pre-wrap; }
                        </item>
                        <item alignment="Qt::AlignHCenter">
                         <widget class="QPushButton" name="previewImageBtn">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1151,6 +1140,9 @@ p, li { white-space: pre-wrap; }
                        </item>
                        <item alignment="Qt::AlignLeft">
                         <widget class="QPushButton" name="homeBtn">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1305,6 +1297,9 @@ p, li { white-space: pre-wrap; }
                       <layout class="QHBoxLayout" name="horizontalLayout_9">
                        <item>
                         <widget class="QPushButton" name="executeBtn">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1321,7 +1316,10 @@ p, li { white-space: pre-wrap; }
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="home1Btn">
+                        <widget class="QPushButton" name="choiceRolePage">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1334,6 +1332,107 @@ p, li { white-space: pre-wrap; }
                            <width>24</width>
                            <height>24</height>
                           </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="pageChoiceRole">
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QFrame" name="frame_19">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <item alignment="Qt::AlignHCenter">
+                     <widget class="QLabel" name="label">
+                      <property name="font">
+                       <font>
+                        <pointsize>13</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Выберите роль</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_20">
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_10">
+                       <item alignment="Qt::AlignHCenter">
+                        <widget class="QPushButton" name="userModeBtn">
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="text">
+                          <string> Пользователь</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="../resources.qrc">
+                           <normaloff>:/icons/shopping-cart.svg</normaloff>:/icons/shopping-cart.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>24</width>
+                           <height>24</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item alignment="Qt::AlignHCenter">
+                        <widget class="QPushButton" name="adminModeBtn">
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="mouseTracking">
+                          <bool>false</bool>
+                         </property>
+                         <property name="text">
+                          <string>Администратор</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="../resources.qrc">
+                           <normaloff>:/icons/user.svg</normaloff>:/icons/user.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>24</width>
+                           <height>24</height>
+                          </size>
+                         </property>
+                         <property name="checkable">
+                          <bool>false</bool>
                          </property>
                         </widget>
                        </item>
