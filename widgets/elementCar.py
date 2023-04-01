@@ -1,7 +1,7 @@
 from PySide2 import QtGui
 from PySide2.QtGui import QFont
 from PySide2.QtWidgets import QWidget
-from PySide2.QtCore import Signal
+from PySide2.QtCore import Signal, QSize
 
 from forms.ui_elementCar import Ui_elementCar
 

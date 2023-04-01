@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'elementCarXSAswe.ui'
+## Form generated from reading UI file 'elementCarYikpQo.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,14 +18,14 @@ class Ui_elementCar(object):
     def setupUi(self, elementCar):
         if not elementCar.objectName():
             elementCar.setObjectName(u"elementCar")
-        elementCar.resize(600, 570)
+        elementCar.resize(600, 650)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(elementCar.sizePolicy().hasHeightForWidth())
         elementCar.setSizePolicy(sizePolicy)
-        elementCar.setMinimumSize(QSize(600, 570))
-        elementCar.setMaximumSize(QSize(602, 570))
+        elementCar.setMinimumSize(QSize(600, 650))
+        elementCar.setMaximumSize(QSize(602, 650))
         elementCar.setStyleSheet(u"* {\n"
 "	color: #fff;\n"
 "	background-color: #2a2f38;\n"
@@ -45,7 +45,7 @@ class Ui_elementCar(object):
 "}")
         self.verticalLayout_2 = QVBoxLayout(elementCar)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(9, 0, -1, 20)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 20)
         self.groupBox = QGroupBox(elementCar)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(0, 0))
@@ -65,7 +65,7 @@ class Ui_elementCar(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.frame_3 = QFrame(self.frame_2)
         self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setMaximumSize(QSize(550, 400))
+        self.frame_3.setMaximumSize(QSize(630, 320))
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.frame_3)
@@ -73,8 +73,8 @@ class Ui_elementCar(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 10)
         self.imageArea = QLabel(self.frame_3)
         self.imageArea.setObjectName(u"imageArea")
-        self.imageArea.setMinimumSize(QSize(520, 315))
-        self.imageArea.setMaximumSize(QSize(520, 315))
+        self.imageArea.setMinimumSize(QSize(600, 315))
+        self.imageArea.setMaximumSize(QSize(600, 315))
 
         self.verticalLayout_4.addWidget(self.imageArea)
 
@@ -86,15 +86,15 @@ class Ui_elementCar(object):
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame)
-        self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.frame_4 = QFrame(self.frame)
         self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMaximumSize(QSize(16777215, 50))
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.frame_4)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(5, -1, -1, -1)
         self.frame_6 = QFrame(self.frame_4)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setFrameShape(QFrame.StyledPanel)
@@ -122,7 +122,7 @@ class Ui_elementCar(object):
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.year)
 
 
-        self.verticalLayout_5.addWidget(self.frame_6)
+        self.verticalLayout_5.addWidget(self.frame_6, 0, Qt.AlignTop)
 
         self.frame_5 = QFrame(self.frame_4)
         self.frame_5.setObjectName(u"frame_5")
@@ -145,7 +145,7 @@ class Ui_elementCar(object):
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.label_4)
 
 
-        self.verticalLayout_5.addWidget(self.frame_5)
+        self.verticalLayout_5.addWidget(self.frame_5, 0, Qt.AlignTop)
 
 
         self.verticalLayout_6.addWidget(self.frame_4)
@@ -158,7 +158,7 @@ class Ui_elementCar(object):
         sizePolicy1.setHeightForWidth(self.frame_18.sizePolicy().hasHeightForWidth())
         self.frame_18.setSizePolicy(sizePolicy1)
         self.frame_18.setMinimumSize(QSize(0, 170))
-        self.frame_18.setMaximumSize(QSize(16777215, 170))
+        self.frame_18.setMaximumSize(QSize(16777215, 175))
         self.frame_18.setFrameShape(QFrame.StyledPanel)
         self.frame_18.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_15 = QHBoxLayout(self.frame_18)
@@ -181,27 +181,38 @@ class Ui_elementCar(object):
 
         self.verticalLayout_6.addWidget(self.frame_18, 0, Qt.AlignLeft)
 
+        self.frame_7 = QFrame(self.frame)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_7)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.openRentalFormBtn = QPushButton(self.frame_7)
+        self.openRentalFormBtn.setObjectName(u"openRentalFormBtn")
+        font2 = QFont()
+        font2.setPointSize(12)
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.openRentalFormBtn.setFont(font2)
+        self.openRentalFormBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.openRentalFormBtn.setStyleSheet(u"")
+        icon = QIcon()
+        icon.addFile(u":/icons/shopping-bag.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.openRentalFormBtn.setIcon(icon)
+        self.openRentalFormBtn.setIconSize(QSize(24, 24))
 
-        self.verticalLayout.addWidget(self.frame)
+        self.horizontalLayout_2.addWidget(self.openRentalFormBtn, 0, Qt.AlignHCenter)
 
-
-        self.horizontalLayout.addWidget(self.frame_2)
-
-        self.buttonBox = QFrame(self.groupBox)
+        self.buttonBox = QFrame(self.frame_7)
         self.buttonBox.setObjectName(u"buttonBox")
+        self.buttonBox.setMaximumSize(QSize(70, 16777215))
+        self.buttonBox.setStyleSheet(u"")
         self.buttonBox.setFrameShape(QFrame.StyledPanel)
         self.buttonBox.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.buttonBox)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.deleteCarBtn = QPushButton(self.buttonBox)
-        self.deleteCarBtn.setObjectName(u"deleteCarBtn")
-        icon = QIcon()
-        icon.addFile(u":/icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.deleteCarBtn.setIcon(icon)
-        self.deleteCarBtn.setIconSize(QSize(24, 24))
-
-        self.verticalLayout_3.addWidget(self.deleteCarBtn)
-
+        self.horizontalLayout_3 = QHBoxLayout(self.buttonBox)
+        self.horizontalLayout_3.setSpacing(6)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.editCarBtn = QPushButton(self.buttonBox)
         self.editCarBtn.setObjectName(u"editCarBtn")
         icon1 = QIcon()
@@ -209,10 +220,28 @@ class Ui_elementCar(object):
         self.editCarBtn.setIcon(icon1)
         self.editCarBtn.setIconSize(QSize(24, 24))
 
-        self.verticalLayout_3.addWidget(self.editCarBtn)
+        self.horizontalLayout_3.addWidget(self.editCarBtn)
+
+        self.deleteCarBtn = QPushButton(self.buttonBox)
+        self.deleteCarBtn.setObjectName(u"deleteCarBtn")
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.deleteCarBtn.setIcon(icon2)
+        self.deleteCarBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_3.addWidget(self.deleteCarBtn)
 
 
-        self.horizontalLayout.addWidget(self.buttonBox, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+        self.horizontalLayout_2.addWidget(self.buttonBox)
+
+
+        self.verticalLayout_6.addWidget(self.frame_7)
+
+
+        self.verticalLayout.addWidget(self.frame)
+
+
+        self.horizontalLayout.addWidget(self.frame_2)
 
 
         self.verticalLayout_2.addWidget(self.groupBox)
@@ -247,7 +276,8 @@ class Ui_elementCar(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">\u0412 \u043d\u0430\u0448\u0435\u043c \u043f\u0430\u0440\u043a\u0435</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">\u0426\u0432\u0435\u0442</span></p></body></html>", None))
         self.specifications.setText(QCoreApplication.translate("elementCar", u"TextLabel", None))
-        self.deleteCarBtn.setText("")
+        self.openRentalFormBtn.setText(QCoreApplication.translate("elementCar", u"\u0410\u0440\u0435\u043d\u0434\u0430", None))
         self.editCarBtn.setText("")
+        self.deleteCarBtn.setText("")
     # retranslateUi
 
