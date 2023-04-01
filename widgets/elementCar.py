@@ -1,14 +1,9 @@
-from pathlib import Path
-
 from PySide2 import QtGui
 from PySide2.QtGui import QFont
 from PySide2.QtWidgets import QWidget
 from PySide2.QtCore import Signal
 
 from forms.ui_elementCar import Ui_elementCar
-
-
-IMAGE_CARS = "imageCars"
 
 
 class ElementCar(QWidget):
@@ -26,7 +21,7 @@ class ElementCar(QWidget):
 
         self._model = model
         self._year = year
-        self._imagePath = f"{IMAGE_CARS}/{imagePath}"
+        self._imagePath = imagePath
         self._specifications = specifications
         self._cost = cost
 

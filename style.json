@@ -30,10 +30,10 @@
 				{
 					"navigationButtons": [
 						{
+                            "adminModeBtn": "pageShell",
                             "homeBtn": "pageCars",
-                            "home1Btn": "pageCars",
-                            "addCarBtn": "pageAddCar",
-                            "shellBtn": "pageShell"
+                            "choiceRolePage": "pageChoiceRole",
+                            "addCarBtn": "pageAddCar"
 						}
 					]
 				}

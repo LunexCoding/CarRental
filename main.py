@@ -39,26 +39,36 @@ class MainWindow(QMainWindow):
         self.flowCarLayout = FlowLayout()
         self.ui.carLayout.addLayout(self.flowCarLayout)
 
+        self.ui.userModeBtn.clicked.connect(lambda: self.__activateUserRole())
         self.ui.saveCarBtn.clicked.connect(lambda: self.addCar())
         self.ui.previewImageBtn.clicked.connect(lambda: self.showImage())
         self.ui.executeBtn.clicked.connect(lambda: self.executeCommand())
-
-        self.__loadData()
 
     def __loadData(self):
         fileSystem.makeDir(IMAGE_CARS, recreate=True)
         for image in ftpServer.listDir():
             ftpServer.downloadFile(image)
-
         with databaseSession as db:
             data = db.getRows(SqlQueries.selectAllCars())
-            for car in data:
-                self.ui.inputModel.setText(car["model"])
-                self.ui.inputModelYear.setText(str(car["year"]))
-                self.ui.inputSpecifications.setText(car["image"])
-                self.ui.inputImagePath.setText(car["specifications"])
-                self.ui.inputCost.setText(str(car["cost"]))
-                self.__carAdded()
+            if data:
+                for car in data:
+                    self.ui.inputModel.setText(car["model"])
+                    self.ui.inputModelYear.setText(str(car["year"]))
+                    self.ui.inputImagePath.setText(f'{IMAGE_CARS}/{car["image"]}')
+                    self.ui.inputSpecifications.setText(car["specifications"])
+                    self.ui.inputCost.setText(str(car["cost"]))
+                    self.__carAdded()
+
+    def __activateUserRole(self):
+        self.userRole = "user"
+        self.ui.mainPages.setCurrentIndex(0)
+        self.__loadData()
+
+    def __activateAdminRole(self):
+        self.userRole = "admin"
+        self.showAdminElements()
+        self.ui.mainPages.setCurrentIndex(0)
+        self.__loadData()
 
     def hideAdminElements(self):
         self.ui.addCarBtn.hide()
@@ -76,8 +86,8 @@ class MainWindow(QMainWindow):
 
     def executeCommand(self):
         if self._validateCommand():
-            self.userRole = "admin"
-            self.showAdminElements()
+            self.__activateAdminRole()
+
 
     def _validateCommand(self):
         commandLine = self.ui.inputCommand.toPlainText().replace("Shell>", "")
@@ -89,7 +99,7 @@ class MainWindow(QMainWindow):
                     token = commandArgs.pop(0)
                     if token == config("ADMIN_TOKEN", default=""):
                         self.ui.labelErrorShell.hide()
-                        self.ui.inputCommand.setText("Введен верный токен!")
+                        self.ui.inputCommand.setText("Введен верный токен! Ожидайте загрузки")
                         return True
                     else:
                         self.showErrorLabelShell("Неверный токен!")
@@ -123,7 +133,6 @@ class MainWindow(QMainWindow):
                 db.execute(
                     SqlQueries.insertCar(model, year, image, specifications, cost),
                     dict(
-                        userRole=self.userRole,
                         model=model,
                         year=year,
                         image=relativeImagePath,
@@ -132,6 +141,9 @@ class MainWindow(QMainWindow):
                     )
                 )
             ftpServer.uploadFile(image)
+            filename = fileSystem.getFilename(image, suffix=True)
+            if not fileSystem.exists(IMAGE_CARS / filename):
+                fileSystem.copyFile(image, IMAGE_CARS / filename)
             return True
         self.showErrorLabelAddCar("Все поля должны быть заполнены!")
         return False
@@ -150,8 +162,8 @@ class MainWindow(QMainWindow):
             self.userRole,
             self.ui.inputModel.text(),
             self.ui.inputModelYear.text(),
-            self.ui.inputSpecifications.toPlainText(),
             self.ui.inputImagePath.text(),
+            self.ui.inputSpecifications.toPlainText(),
             self.ui.inputCost.text()
         )
         self.flowCarLayout.addWidget(itemCar)
@@ -160,8 +172,8 @@ class MainWindow(QMainWindow):
 
         self.ui.inputModel.clear()
         self.ui.inputModelYear.clear()
-        self.ui.inputSpecifications.setText("характеристика\n" * 8 + "характеристика")
         self.ui.inputImagePath.clear()
+        self.ui.inputSpecifications.setText("характеристика\n" * 8 + "характеристика")
         self.ui.inputCost.clear()
 
     def __deleteCar(self, model, year, image, specifications, cost):
@@ -181,9 +193,14 @@ class MainWindow(QMainWindow):
                 )
             )
         ftpServer.deleteFile(image)
+        if not fileSystem.exists(IMAGE_CARS / image):
+            ftpServer.downloadFile(image)
         fileSystem.remove(IMAGE_CARS / image)
 
+
     def __editCar(self, model, year, imagePath, specifications, cost):
+        print(self.ui.inputModel.text())
+        print(model)
         self.ui.mainPages.setCurrentIndex(1)
         self.ui.inputModel.setText(model)
         self.ui.inputModelYear.setText(year)

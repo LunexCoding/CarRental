@@ -3,7 +3,7 @@ from decouple import config
 from pathlib import Path
 from helpers.fileSystem import fileSystem
 
-FTP_SERVER_IMAGE_DIRECTORY = Path("image")
+FTP_SERVER_IMAGE_DIRECTORY = "image"
 IMAGE_CARS = Path("imageCars")
 
 
@@ -24,6 +24,8 @@ class _FTPServer:
         return self._ftp
 
     def uploadFile(self, path):
+        self.connectServer(login, password)
+        self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         path = Path(path)
         if self.getStatus() == 'unlocked':
             self.statusLocked()
@@ -31,20 +33,25 @@ class _FTPServer:
                 with path.open('rb') as file:
                     self._ftp.storbinary('STOR ' + path.name, file, 1024)
                     self.statusUnlocked()
-            except:
+            except Exception as e:
                 self.statusUnlocked()
+        self.closeConnect()
 
     def downloadFile(self, filename):
+        self.connectServer(login, password)
+        self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         if self.getStatus() == 'unlocked':
             self.statusLocked()
             try:
                 with Path(IMAGE_CARS / filename).open('wb') as file:
                     self._ftp.retrbinary('RETR ' + filename, file.write)
                     self.statusUnlocked()
-            except:
+            except Exception as e:
                 self.statusUnlocked()
 
     def deleteFile(self, path):
+        self.connectServer(login, password)
+        self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         if self.getStatus() == 'unlocked':
             self.statusLocked()
             try:
@@ -52,6 +59,7 @@ class _FTPServer:
                 self.statusUnlocked()
             except:
                 self.statusUnlocked()
+        self.closeConnect()
 
     def statusUnlocked(self):
         self._ftp.rename('locked', 'unlocked')
@@ -65,18 +73,25 @@ class _FTPServer:
                 return status
 
     def listDir(self):
-        files = self._ftp.nlst()[2:]
-        del files[-1]
-        return files
+        self.connectServer(login, password)
+        self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
+        files = []
+        try:
+            files = self._ftp.nlst()[2:]
+            self.closeConnect()
+            del files[-1]
+            return files
+        except:
+            self.closeConnect()
+            return files
 
     def createLocker(self):
+        self.connectServer(login, password)
         if 'unlocked' and 'locked' not in self._ftp.nlst():
-            try:
-                open('../unlocked', 'wb').close()
-                self._ftp.cwd("image")
-                self._ftp.storbinary('STOR unlocked', open('../unlocked', 'rb'))
-            except Exception as e:
-                print(e)
+            open('../unlocked', 'wb').close()
+            self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
+            self._ftp.storbinary('STOR unlocked', open('../unlocked', 'rb'))
+        self.closeConnect()
 
     def closeConnect(self):
         self._ftp.close()
@@ -91,8 +106,4 @@ login = config("LOGIN", default="")
 password = config("PASSWORD", default="")
 
 ftpServer = _FTPServer(host, port)
-ftpServer.connectServer(login, password)
 ftpServer.createLocker()
-
-
-

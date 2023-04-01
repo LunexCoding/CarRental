@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'elementCarHwKaXI.ui'
+## Form generated from reading UI file 'elementCarXSAswe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -45,7 +45,7 @@ class Ui_elementCar(object):
 "}")
         self.verticalLayout_2 = QVBoxLayout(elementCar)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(9, 0, -1, 0)
+        self.verticalLayout_2.setContentsMargins(9, 0, -1, 20)
         self.groupBox = QGroupBox(elementCar)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(0, 0))

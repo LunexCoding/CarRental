@@ -1,4 +1,5 @@
 import os
+import shutil
 from pathlib import Path
 from helpers.fileSystemExceptions import (
     IsNotEmptyException,
@@ -77,6 +78,17 @@ class _FileSystem:
 
     def exists(self, path):
         return Path(path).exists()
+
+    def copyFile(self, path, newPath):
+        path = Path(path)
+        newPath = Path(newPath)
+        if not path.exists():
+            raise PathNotFoundException(path)
+        if newPath.exists():
+            raise PathExistsException(newPath)
+        if (path.exists() and path.is_dir()):
+            raise PathExistsAsDirectoryException(path)
+        shutil.copy(path, newPath)
 
 
 fileSystem = _FileSystem()
