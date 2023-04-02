@@ -7,6 +7,7 @@ from PySide2.examples.widgets.layouts.flowlayout import FlowLayout
 from forms.ui_interface import Ui_MainWindow
 from widgets.flowLayout import FlowLayout
 from widgets.elementCar import ElementCar
+from widgets.rentalFormDialog import RentalFormDialog
 
 from helpers.fileSystem import fileSystem
 from helpers.database import databaseSession
@@ -147,6 +148,17 @@ class MainWindow(QMainWindow):
         )
         self.flowCarLayout.addWidget(itemCar)
         itemCar._delete.connect(self.deleteCar)
+        itemCar._openRentalForm.connect(self.openRentalForm)
+
+    def openRentalForm(self, model, modelYear, cost):
+        dialog = RentalFormDialog()
+        responce = dialog.exec_()
+        while not dialog.validate():
+            dialog.show()
+            if responce == QtWidgets.QDialog.Rejected:
+                break
+        else:
+            dialog.sendEmail(f"\nМодуль: {model}\nГод выпуска: {modelYear}\nЦена аренды в сутки: {cost}р\n")
 
     def __addCarToDB(self):
         model = self.ui.inputModel.text()
