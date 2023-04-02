@@ -9,7 +9,8 @@ class SqlQueries:
     @staticmethod
     def deleteCar(model, year, image, specifications, cost):
         return ("DELETE FROM cars "
-                "WHERE model=%(model)s AND year=%(year)s AND image=%(image)s AND specifications=%(specifications)s AND cost=%(cost)s")
+                "WHERE (model=%(model)s AND year=%(year)s AND image=%(image)s AND specifications=%(specifications)s AND cost=%(cost)s)"
+                "LIMIT 1")
 
     @staticmethod
     def selectAllCars():

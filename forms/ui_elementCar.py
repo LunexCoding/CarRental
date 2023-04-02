@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'elementCarYikpQo.ui'
+## Form generated from reading UI file 'elementCarTMGteW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -45,7 +45,7 @@ class Ui_elementCar(object):
 "}")
         self.verticalLayout_2 = QVBoxLayout(elementCar)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 20)
+        self.verticalLayout_2.setContentsMargins(0, 0, 20, 20)
         self.groupBox = QGroupBox(elementCar)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(0, 0))
@@ -73,8 +73,8 @@ class Ui_elementCar(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 10)
         self.imageArea = QLabel(self.frame_3)
         self.imageArea.setObjectName(u"imageArea")
-        self.imageArea.setMinimumSize(QSize(600, 315))
-        self.imageArea.setMaximumSize(QSize(600, 315))
+        self.imageArea.setMinimumSize(QSize(580, 315))
+        self.imageArea.setMaximumSize(QSize(580, 315))
 
         self.verticalLayout_4.addWidget(self.imageArea)
 
@@ -215,6 +215,7 @@ class Ui_elementCar(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.editCarBtn = QPushButton(self.buttonBox)
         self.editCarBtn.setObjectName(u"editCarBtn")
+        self.editCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
         icon1 = QIcon()
         icon1.addFile(u":/icons/edit.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.editCarBtn.setIcon(icon1)
@@ -224,6 +225,7 @@ class Ui_elementCar(object):
 
         self.deleteCarBtn = QPushButton(self.buttonBox)
         self.deleteCarBtn.setObjectName(u"deleteCarBtn")
+        self.deleteCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
         icon2 = QIcon()
         icon2.addFile(u":/icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.deleteCarBtn.setIcon(icon2)
