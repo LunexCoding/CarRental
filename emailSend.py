@@ -8,7 +8,10 @@ SETTINGS_CONFIG = Path("settings.json")
 
 
 class _EmailSender:
-    def __init__(self, __settings):
+    def __init__(self):
+        self.__settings = None
+
+    def loadSettings(self, __settings):
         self.__settings = __settings
 
     def sendEmail(self, email, subject, message):
@@ -31,7 +34,4 @@ class _EmailSender:
             return False
 
 
-__settings = None
-with SETTINGS_CONFIG.open(encoding="utf-8") as __settingsConfig:
-    __settings = json.load(__settingsConfig)
-emailSender = _EmailSender(__settings)
+emailSender = _EmailSender()

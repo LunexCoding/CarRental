@@ -7,12 +7,13 @@ from PySide2.examples.widgets.layouts.flowlayout import FlowLayout
 from forms.ui_interface import Ui_MainWindow
 from widgets.flowLayout import FlowLayout
 from widgets.elementCar import ElementCar
-from widgets.rentalFormDialog import RentalFormDialog
+from widgets.rentalFormDialog import RentalFormDialog, emailSender
 
 from helpers.fileSystem import fileSystem
 from helpers.database import databaseSession
 from helpers.sqlQueries import SqlQueries
 from helpers.server import ftpServer
+from settingsConfig import settingsConfig
 
 
 IMAGE_CARS = Path("imageCars")
@@ -229,6 +230,8 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+    IMAGE_CARS.mkdir(exist_ok=True)
+    emailSender.loadSettings(settingsConfig.settings)
     app = QApplication(sys.argv)
     widget = MainWindow()
     sys.exit(app.exec_())
