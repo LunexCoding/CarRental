@@ -8,7 +8,6 @@ from forms.ui_elementCar import Ui_elementCar
 
 class ElementCar(QWidget):
     _delete = Signal(str, str, str, str, str)
-    _edit = Signal(str, str, str, str, str)
 
     def __init__(self, userRole, model, year, imagePath, specifications, cost, parent=None):
         super(ElementCar, self).__init__(parent)
@@ -40,16 +39,12 @@ class ElementCar(QWidget):
         self.ui.imageArea.setPixmap(pixmap)
 
         self.ui.deleteCarBtn.clicked.connect(self.delete)
-        self.ui.editCarBtn.clicked.connect(self.edit)
 
     def hideAdminElements(self):
         self.ui.buttonBox.hide()
 
     def delete(self):
         self._delete.emit(self._model, self._year, self._imagePath, self._specifications, self._cost)
-
-    def edit(self):
-        self._edit.emit(self._model, self._year, self._imagePath, self._specifications, self._cost)
 
     def _showButtonBox(self):
         self.ui.buttonBox.show()

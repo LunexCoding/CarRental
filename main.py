@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
 
         self.ui.userModeBtn.clicked.connect(lambda: self.__activateUserRole())
         self.ui.saveCarBtn.clicked.connect(lambda: self.addCar())
-        self.ui.previewImageBtn.clicked.connect(lambda: self.showImage())
+        self.ui.previewImageBtn.clicked.connect(lambda: self.showImageAddCarPage())
         self.ui.executeBtn.clicked.connect(lambda: self.__executeCommand())
 
     def __loadData(self):
@@ -53,11 +53,12 @@ class MainWindow(QMainWindow):
             if data:
                 for car in data:
                     self.ui.inputModel.setText(car["model"])
-                    self.ui.inputModelYear.setText(str(car["year"]))
+                    self.ui.inputModelYear.setText(str(car["modelYear"]))
                     self.ui.inputImagePath.setText(f'{IMAGE_CARS}/{car["image"]}')
                     self.ui.inputSpecifications.setText(car["specifications"])
                     self.ui.inputCost.setText(str(car["cost"]))
                     self.__carWidgetAdded()
+                    self.__clearAddCarForm()
 
     def __activateUserRole(self):
         self.userRole = "user"
@@ -119,12 +120,12 @@ class MainWindow(QMainWindow):
 
     def __validateAddCarForm(self):
         model = self.ui.inputModel.text()
-        year = self.ui.inputModelYear.text()
+        modelYear = self.ui.inputModelYear.text()
         image = self.ui.inputImagePath.text()
         specifications = self.ui.inputSpecifications.toPlainText()
         cost = self.ui.inputCost.text()
-        if (all([len(model), len(year), len(image), len(specifications), len(cost)])):
-            if not year.isdecimal() or not cost.isdecimal():
+        if (all([len(model), len(modelYear), len(image), len(specifications), len(cost)])):
+            if not modelYear.isdecimal() or not cost.isdecimal():
                 self.__showErrorLabelAddCar("Поля <Год> и <Стоимость аренды в сутки> принимает только числовой тип!")
                 return False
             if "характеристика" in specifications:
@@ -146,21 +147,20 @@ class MainWindow(QMainWindow):
         )
         self.flowCarLayout.addWidget(itemCar)
         itemCar._delete.connect(self.deleteCar)
-        itemCar._edit.connect(self.editCar)
 
     def __addCarToDB(self):
         model = self.ui.inputModel.text()
-        year = self.ui.inputModelYear.text()
+        modelYear = self.ui.inputModelYear.text()
         image = self.ui.inputImagePath.text()
         relativeImagePath = Path(image).name
         specifications = self.ui.inputSpecifications.toPlainText()
         cost = self.ui.inputCost.text()
         with databaseSession as db:
             db.execute(
-                SqlQueries.insertCar(model, year, image, specifications, cost),
+                SqlQueries.insertCar(model, modelYear, image, specifications, cost),
                 dict(
                     model=model,
-                    year=year,
+                    modelYear=modelYear,
                     image=relativeImagePath,
                     specifications=specifications,
                     cost=cost
@@ -179,23 +179,23 @@ class MainWindow(QMainWindow):
         self.ui.inputCost.clear()
 
     # process of deleting a car
-    def deleteCar(self, model, year, image, specifications, cost):
+    def deleteCar(self, model, modelYear, image, specifications, cost):
         self.__deleteCarWidget()
-        self.__deleteCarFromDB(model, year, image, specifications, cost)
+        self.__deleteCarFromDB(model, modelYear, image, specifications, cost)
 
     def __deleteCarWidget(self):
         widget = self.sender()
         self.flowCarLayout.removeWidget(widget)
         widget.deleteLater()
 
-    def __deleteCarFromDB(self, model, year, image, specifications, cost):
+    def __deleteCarFromDB(self, model, modelYear, image, specifications, cost):
         image = Path(image).name
         with databaseSession as db:
             db.execute(
-                SqlQueries.deleteCar(model, year, image, specifications, cost),
+                SqlQueries.deleteCar(model, modelYear, image, specifications, cost),
                 dict(
                     model=model,
-                    year=year,
+                    modelYear=modelYear,
                     image=image,
                     specifications=specifications,
                     cost=cost
@@ -206,33 +206,12 @@ class MainWindow(QMainWindow):
             ftpServer.downloadFile(image)
         fileSystem.remove(IMAGE_CARS / image)
 
-    # process of editing a car
-    def editCar(self, model, year, imagePath, specifications, cost):
-        self.ui.mainPages.setCurrentIndex(1)
-        # print(self.ui.inputModel.text())
-        # print(model)
-        # self.ui.inputModel.setText(model)
-        # self.ui.inputModelYear.setText(year)
-        # self.ui.inputImagePath.setText(imagePath)
-        # self.ui.inputSpecifications.setText(specifications)
-        # self.ui.inputCost.setText(cost)
-        # self.showImage()
-
-    def __getDataFromWidget(self, model, year, imagePath, specifications, cost):
-        ...
-
-    def __editCarWidget(self, model, year, imagePath, specifications, cost):
-        ...
-
-    def __editCarInDB(self, model, year, imagePath, specifications, cost):
-        ...
-
-    def showImage(self):
+    def showImageAddCarPage(self):
         if len(self.ui.inputImagePath.text()):
-            size = self.ui.imageArea.size()
+            size = self.ui.imageAreaAddCarPage.size()
             img = QtGui.QImage(self.ui.inputImagePath.text())
             pixmap = QtGui.QPixmap(img.scaled(size))
-            self.ui.imageArea.setPixmap(pixmap)
+            self.ui.imageAreaAddCarPage.setPixmap(pixmap)
         else:
             self.__showErrorLabelAddCar("Не указан путь к изображению!")
 

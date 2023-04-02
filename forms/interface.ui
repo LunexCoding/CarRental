@@ -1053,7 +1053,7 @@ p, li { white-space: pre-wrap; }
                               <number>20</number>
                              </property>
                              <item>
-                              <widget class="QLabel" name="imageArea">
+                              <widget class="QLabel" name="imageAreaAddCarPage">
                                <property name="maximumSize">
                                 <size>
                                  <width>16777215</width>

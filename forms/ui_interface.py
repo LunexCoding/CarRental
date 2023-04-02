@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceaIAtjM.ui'
+## Form generated from reading UI file 'interfaceXxEijS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -594,11 +594,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setSpacing(10)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(10, 20, 10, 20)
-        self.imageArea = QLabel(self.frame_8)
-        self.imageArea.setObjectName(u"imageArea")
-        self.imageArea.setMaximumSize(QSize(16777215, 650))
+        self.imageAreaAddCarPage = QLabel(self.frame_8)
+        self.imageAreaAddCarPage.setObjectName(u"imageAreaAddCarPage")
+        self.imageAreaAddCarPage.setMaximumSize(QSize(16777215, 650))
 
-        self.verticalLayout_6.addWidget(self.imageArea)
+        self.verticalLayout_6.addWidget(self.imageAreaAddCarPage)
 
 
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.frame_8)
@@ -905,7 +905,7 @@ class Ui_MainWindow(object):
 "<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">\u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430</span></p>\n"
 "<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">\u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430</span></p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0430\u0440\u0435\u043d\u0434\u044b \u0432 \u0441\u0443\u0442\u043a\u0438:", None))
-        self.imageArea.setText("")
+        self.imageAreaAddCarPage.setText("")
         self.saveCarBtn.setText("")
         self.previewImageBtn.setText("")
         self.homeBtn.setText("")

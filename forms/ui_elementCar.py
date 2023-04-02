@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'elementCarTMGteW.ui'
+## Form generated from reading UI file 'elementCarxmuWik.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -213,22 +213,12 @@ class Ui_elementCar(object):
         self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.editCarBtn = QPushButton(self.buttonBox)
-        self.editCarBtn.setObjectName(u"editCarBtn")
-        self.editCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/edit.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.editCarBtn.setIcon(icon1)
-        self.editCarBtn.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_3.addWidget(self.editCarBtn)
-
         self.deleteCarBtn = QPushButton(self.buttonBox)
         self.deleteCarBtn.setObjectName(u"deleteCarBtn")
         self.deleteCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.deleteCarBtn.setIcon(icon2)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.deleteCarBtn.setIcon(icon1)
         self.deleteCarBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_3.addWidget(self.deleteCarBtn)
@@ -279,7 +269,6 @@ class Ui_elementCar(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">\u0426\u0432\u0435\u0442</span></p></body></html>", None))
         self.specifications.setText(QCoreApplication.translate("elementCar", u"TextLabel", None))
         self.openRentalFormBtn.setText(QCoreApplication.translate("elementCar", u"\u0410\u0440\u0435\u043d\u0434\u0430", None))
-        self.editCarBtn.setText("")
         self.deleteCarBtn.setText("")
     # retranslateUi
 
