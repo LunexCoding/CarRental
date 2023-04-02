@@ -2,7 +2,7 @@ from Custom_Widgets.Widgets import QDialog
 
 from forms.ui_rentalFormDialog import Ui_rentalFormDialog
 
-from emailSend import emailSender
+from helpers.emailSend import emailSender
 
 
 class RentalFormDialog(QDialog):

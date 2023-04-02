@@ -4,7 +4,7 @@ import smtplib
 from email_validator import validate_email, EmailNotValidError
 
 
-SETTINGS_CONFIG = Path("settings.json")
+SETTINGS_CONFIG = Path("../settings.json")
 
 
 class _EmailSender:
