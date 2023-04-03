@@ -1,7 +1,4 @@
-import json
-from pathlib import Path
 from decouple import config
-
 
 
 class _SettingsConfig:
@@ -11,27 +8,27 @@ class _SettingsConfig:
     def __loadSettings(self):
         __settings = {}
         __settings["FTP"] = dict(
-            host=config("FTP_HOST", default=""),
-            port=int(config("FTP_PORT", default="")),
-            login=config("FTP_LOGIN", default=""),
-            password=config("FTP_PASSWORD", default=""),
-            timeout=int(config("FTP_TIMEOUT", default=""))
+            host=config("FTP_HOST"),
+            port=config("FTP_PORT", cast=int),
+            login=config("FTP_LOGIN"),
+            password=config("FTP_PASSWORD"),
+            timeout=config("FTP_TIMEOUT", default=20, cast=int)
         )
         __settings["DATABASE"] = dict(
-            host=config("DB_HOST", default=""),
-            port=int(config("DB_PORT", default="")),
-            user=config("DB_USER", default=""),
-            password=config("DB_PASSWORD", default=""),
-            database="AutoService"
+            host=config("DB_HOST"),
+            port=config("DB_PORT", cast=int),
+            user=config("DB_USER"),
+            password=config("DB_PASSWORD"),
+            database=config("DB_NAME")
         )
         __settings["SMTP"] = dict(
-            host=config("SMTP_HOST", default=""),
-            port=int(config("SMTP_PORT", default="")),
-            email=config("SMTP_EMAIL", default=""),
-            password=config("SMTP_PASSWORD", default="")
+            host=config("SMTP_HOST"),
+            port=config("SMTP_PORT", cast=int),
+            email=config("SMTP_EMAIL"),
+            password=config("SMTP_PASSWORD")
         )
         __settings["ADMIN"] = dict(
-            token=config("ADMIN_TOKEN", default="")
+            token=config("ADMIN_TOKEN")
         )
         return __settings
 
