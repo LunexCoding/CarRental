@@ -1,7 +1,6 @@
 from ftplib import FTP
-from decouple import config
 from pathlib import Path
-from helpers.fileSystem import fileSystem
+from settingsConfig import settingsConfig
 
 FTP_SERVER_IMAGE_DIRECTORY = "image"
 IMAGE_CARS = Path("imageCars")
@@ -11,20 +10,23 @@ class _FTPServer:
 
     statuses = ['unlocked', 'locked']
 
-    def __init__(self, host=None, port=None, timeout=20):
-        self._host = host
-        self._port = port
-        self._timeout = timeout
+    def __init__(self, __settings):
+        self.__settings = __settings
+        self.__host = __settings["host"]
+        self.__port = __settings["port"]
+        self.__login = __settings["login"]
+        self.__password = __settings["password"]
+        self.__timeout = __settings["timeout"]
         self._ftp = FTP()
 
-    def connectServer(self, username, password):
-        self._ftp.connect(self._host, self._port, timeout=self._timeout)
-        self._ftp.login(username, password)
+    def connectServer(self):
+        self._ftp.connect(self.__host, self.__port, self.__timeout)
+        self._ftp.login(self.__login, self.__password)
         self._ftp.set_pasv(True)
         return self._ftp
 
     def uploadFile(self, path):
-        self.connectServer(login, password)
+        self.connectServer()
         self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         path = Path(path)
         if self.getStatus() == 'unlocked':
@@ -38,7 +40,7 @@ class _FTPServer:
         self.closeConnect()
 
     def downloadFile(self, filename):
-        self.connectServer(login, password)
+        self.connectServer()
         self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         if self.getStatus() == 'unlocked':
             self.statusLocked()
@@ -50,7 +52,7 @@ class _FTPServer:
                 self.statusUnlocked()
 
     def deleteFile(self, path):
-        self.connectServer(login, password)
+        self.connectServer()
         self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         if self.getStatus() == 'unlocked':
             self.statusLocked()
@@ -73,7 +75,7 @@ class _FTPServer:
                 return status
 
     def listDir(self):
-        self.connectServer(login, password)
+        self.connectServer()
         self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
         files = []
         try:
@@ -86,7 +88,7 @@ class _FTPServer:
             return files
 
     def createLocker(self):
-        self.connectServer(login, password)
+        self.connectServer()
         if 'unlocked' and 'locked' not in self._ftp.nlst():
             open('../unlocked', 'wb').close()
             self._ftp.cwd(FTP_SERVER_IMAGE_DIRECTORY)
@@ -100,10 +102,5 @@ class _FTPServer:
         self.closeConnect()
 
 
-host = config("HOST", default="")
-port = int(config("PORT", default=""))
-login = config("LOGIN", default="")
-password = config("PASSWORD", default="")
-
-ftpServer = _FTPServer(host, port)
+ftpServer = _FTPServer(settingsConfig.FTPSettings)
 ftpServer.createLocker()

@@ -1,25 +1,16 @@
 import pymysql
-from decouple import config
-
-
-db_config = {
-    'host': config("DB_HOST", default=""),
-    'port': int(config("DB_PORT", default="")),
-    'user': config("DB_USER", default=""),
-    'password': config("DB_PASSWORD", default=""),
-    'database': "AutoService",
-    'cursorclass': pymysql.cursors.DictCursor
-}
+from settingsConfig import settingsConfig
 
 
 class DatabaseConnection(object):
-    def __init__(self, db_local):
-        self.db_local = db_local
+    def __init__(self, __settings):
+        self.__settings = __settings
+        self.__settings["cursorclass"] = pymysql.cursors.DictCursor
         self.dbConn = None
         self.dbCursor = None
 
     def __enter__(self):
-        self.dbConn = pymysql.connect(**self.db_local, autocommit=True)
+        self.dbConn = pymysql.connect(**self.__settings, autocommit=True)
         self.dbCursor = self.dbConn.cursor()
         return self
 
@@ -42,4 +33,4 @@ class DatabaseConnection(object):
         return self.dbCursor.fetchall()
 
 
-databaseSession = DatabaseConnection(db_config)
+databaseSession = DatabaseConnection(settingsConfig.DatabaseSettings)

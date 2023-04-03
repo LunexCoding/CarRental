@@ -1,17 +1,16 @@
-import json
-from pathlib import Path
 import smtplib
+from pathlib import Path
+
 from email_validator import validate_email, EmailNotValidError
+
+from settingsConfig import settingsConfig
 
 
 SETTINGS_CONFIG = Path("../settings.json")
 
 
 class _EmailSender:
-    def __init__(self):
-        self.__settings = None
-
-    def loadSettings(self, __settings):
+    def __init__(self, __settings):
         self.__settings = __settings
 
     def sendEmail(self, email, subject, message):
@@ -34,4 +33,4 @@ class _EmailSender:
             return False
 
 
-emailSender = _EmailSender()
+emailSender = _EmailSender(settingsConfig.SMTPSettings)

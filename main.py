@@ -1,4 +1,3 @@
-from decouple import config
 from pathlib import Path
 
 from Custom_Widgets.Widgets import *
@@ -7,8 +6,8 @@ from PySide2.examples.widgets.layouts.flowlayout import FlowLayout
 from forms.ui_interface import Ui_MainWindow
 from widgets.flowLayout import FlowLayout
 from widgets.elementCar import ElementCar
-from widgets.rentalFormDialog import RentalFormDialog, emailSender
 
+from helpers.emailSend import emailSender
 from helpers.fileSystem import fileSystem
 from helpers.database import databaseSession
 from helpers.sqlQueries import SqlQueries
@@ -17,6 +16,7 @@ from settingsConfig import settingsConfig
 
 
 IMAGE_CARS = Path("imageCars")
+ADMIN_TOKEN = settingsConfig.AdminSettings["token"]
 
 
 class MainWindow(QMainWindow):
@@ -35,6 +35,8 @@ class MainWindow(QMainWindow):
 
         self.ui.labelErrorAddCar.hide()
         self.ui.labelErrorShell.hide()
+        self.ui.labelRentalForm.hide()
+
         if self.userRole != 'admin':
             self.__hideAdminElements()
 
@@ -45,6 +47,8 @@ class MainWindow(QMainWindow):
         self.ui.saveCarBtn.clicked.connect(lambda: self.addCar())
         self.ui.previewImageBtn.clicked.connect(lambda: self.showImageAddCarPage())
         self.ui.executeBtn.clicked.connect(lambda: self.__executeCommand())
+        self.ui.sendRentaFormBtn.clicked.connect(lambda: self.__sendRentalForm())
+        self.ui.closeRentalFormBtn.clicked.connect(lambda: self.__clearRentalForm())
 
     def __loadData(self):
         fileSystem.makeDir(IMAGE_CARS, recreate=True)
@@ -87,6 +91,15 @@ class MainWindow(QMainWindow):
         self.ui.labelErrorAddCar.setText(message)
         self.ui.labelErrorAddCar.show()
 
+    def __showLabelRentalForm(self, message, errorMode=True):
+        if errorMode:
+            self.ui.labelRentalForm.setStyleSheet("color: red;")
+        else:
+            self.ui.labelRentalForm.setStyleSheet("color: green;")
+        self.ui.labelRentalForm.setText(message)
+        self.ui.labelRentalForm.show()
+
+
     # shell -> command processing
     def __executeCommand(self):
         if self.__validateCommand():
@@ -100,7 +113,7 @@ class MainWindow(QMainWindow):
             if command == "admin":
                 if len(commandArgs):
                     token = commandArgs.pop(0)
-                    if token == config("ADMIN_TOKEN", default=""):
+                    if token == ADMIN_TOKEN:
                         self.ui.labelErrorShell.hide()
                         self.ui.inputCommand.setText("Введен верный токен! Ожидайте загрузки")
                         return True
@@ -149,17 +162,45 @@ class MainWindow(QMainWindow):
         )
         self.flowCarLayout.addWidget(itemCar)
         itemCar._delete.connect(self.deleteCar)
-        itemCar._openRentalForm.connect(self.openRentalForm)
+        itemCar._openRentalForm.connect(self.__openRentalForm)
 
-    def openRentalForm(self, model, modelYear, cost):
-        dialog = RentalFormDialog()
-        responce = dialog.exec_()
-        while not dialog.validate():
-            dialog.show()
-            if responce == QtWidgets.QDialog.Rejected:
-                break
-        else:
-            dialog.sendEmail(f"\nМодуль: {model}\nГод выпуска: {modelYear}\nЦена аренды в сутки: {cost}р\n")
+    # Rental form
+    def __openRentalForm(self, model, modelYear, cost):
+        if self.ui.labelRentalForm.isVisible():
+            self.ui.labelRentalForm.hide()
+        self.ui.mainPages.setCurrentIndex(1)
+        self.ui.labelCarData.setText(f"Модель: {model}\nГод производства: {modelYear}\nЦена аренды в сутки: {cost}")
+
+    def __sendRentalForm(self):
+        carData = self.ui.labelCarData.text()
+        if self.__validateRentalForm():
+            fullName = self.ui.inputFullName.text()
+            email = self.ui.inputEmail.text()
+            emailSender.sendEmail(
+                email=email,
+                subject="Заявка на аренду автомобиля",
+                message=f"{fullName}, мы получили вашу заявку на аренду:\n{carData}.\nСкоро мы свяжемся с вами."
+            )
+
+    def __validateRentalForm(self):
+        fullName = self.ui.inputFullName.text()
+        phone = self.ui.inputPhone.text()
+        email = self.ui.inputEmail.text()
+        if all([len(fullName), len(phone), len(email)]):
+            if not emailSender.validateEmail(email):
+                self.__showLabelRentalForm("Невалидный Email!")
+                return False
+            self.ui.labelRentalForm.hide()
+            self.__showLabelRentalForm("Заявка отправлена!", False)
+            return True
+        self.__showLabelRentalForm("Все поля должны быть заполнены!")
+        return False
+
+    def __clearRentalForm(self):
+        self.ui.labelRentalForm.hide()
+        self.ui.inputFullName.clear()
+        self.ui.inputPhone.clear()
+        self.ui.inputEmail.clear()
 
     def __addCarToDB(self):
         model = self.ui.inputModel.text()
@@ -231,7 +272,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     IMAGE_CARS.mkdir(exist_ok=True)
-    emailSender.loadSettings(settingsConfig.settings)
     app = QApplication(sys.argv)
     widget = MainWindow()
     sys.exit(app.exec_())
