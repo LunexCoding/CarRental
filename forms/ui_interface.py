@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceXxEijS.ui'
+## Form generated from reading UI file 'interfaceJxoRKv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -23,6 +23,9 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(850, 741)
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
+        font = QFont()
+        font.setPointSize(12)
+        MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"* {\n"
 "	border: None;\n"
 "	background-color: transparent;\n"
@@ -240,8 +243,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.frame_5 = QFrame(self.headerContainer)
         self.frame_5.setObjectName(u"frame_5")
-        font = QFont()
-        font.setPointSize(12)
         self.frame_5.setFont(font)
         self.frame_5.setFrameShape(QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QFrame.Raised)
@@ -402,6 +403,167 @@ class Ui_MainWindow(object):
         self.verticalLayout_18.addWidget(self.scrollArea)
 
         self.mainPages.addWidget(self.pageCars)
+        self.pageRentalForm = QWidget()
+        self.pageRentalForm.setObjectName(u"pageRentalForm")
+        self.verticalLayout_17 = QVBoxLayout(self.pageRentalForm)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.frame_26 = QFrame(self.pageRentalForm)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setMaximumSize(QSize(16777215, 100))
+        font3 = QFont()
+        font3.setPointSize(12)
+        font3.setBold(True)
+        font3.setWeight(75)
+        self.frame_26.setFont(font3)
+        self.frame_26.setFrameShape(QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frame_26)
+        self.verticalLayout_16.setSpacing(15)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(-1, 20, -1, -1)
+        self.label_10 = QLabel(self.frame_26)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFont(font3)
+
+        self.verticalLayout_16.addWidget(self.label_10)
+
+        self.labelRentalForm = QLabel(self.frame_26)
+        self.labelRentalForm.setObjectName(u"labelRentalForm")
+        font4 = QFont()
+        font4.setPointSize(10)
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.labelRentalForm.setFont(font4)
+        self.labelRentalForm.setStyleSheet(u"color: red;")
+
+        self.verticalLayout_16.addWidget(self.labelRentalForm, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_17.addWidget(self.frame_26, 0, Qt.AlignHCenter)
+
+        self.frame_27 = QFrame(self.pageRentalForm)
+        self.frame_27.setObjectName(u"frame_27")
+        self.frame_27.setMaximumSize(QSize(400, 120))
+        self.frame_27.setFont(font3)
+        self.frame_27.setFrameShape(QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_27)
+        self.verticalLayout_19.setSpacing(10)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.label_11 = QLabel(self.frame_27)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setFont(font4)
+
+        self.verticalLayout_19.addWidget(self.label_11)
+
+        self.labelCarData = QLabel(self.frame_27)
+        self.labelCarData.setObjectName(u"labelCarData")
+
+        self.verticalLayout_19.addWidget(self.labelCarData)
+
+
+        self.verticalLayout_17.addWidget(self.frame_27, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+        self.frame_21 = QFrame(self.pageRentalForm)
+        self.frame_21.setObjectName(u"frame_21")
+        self.frame_21.setMinimumSize(QSize(300, 0))
+        self.frame_21.setMaximumSize(QSize(400, 400))
+        self.frame_21.setFrameShape(QFrame.StyledPanel)
+        self.frame_21.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frame_21)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(-1, 0, -1, 20)
+        self.frame_22 = QFrame(self.frame_21)
+        self.frame_22.setObjectName(u"frame_22")
+        self.frame_22.setFrameShape(QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_22)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.label_7 = QLabel(self.frame_22)
+        self.label_7.setObjectName(u"label_7")
+
+        self.verticalLayout_12.addWidget(self.label_7)
+
+        self.inputFullName = QLineEdit(self.frame_22)
+        self.inputFullName.setObjectName(u"inputFullName")
+        self.inputFullName.setMaximumSize(QSize(300, 16777215))
+
+        self.verticalLayout_12.addWidget(self.inputFullName)
+
+
+        self.verticalLayout_11.addWidget(self.frame_22)
+
+        self.frame_23 = QFrame(self.frame_21)
+        self.frame_23.setObjectName(u"frame_23")
+        self.frame_23.setFrameShape(QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_23)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.label_8 = QLabel(self.frame_23)
+        self.label_8.setObjectName(u"label_8")
+
+        self.verticalLayout_13.addWidget(self.label_8)
+
+        self.inputPhone = QLineEdit(self.frame_23)
+        self.inputPhone.setObjectName(u"inputPhone")
+        self.inputPhone.setMaximumSize(QSize(300, 16777215))
+
+        self.verticalLayout_13.addWidget(self.inputPhone)
+
+
+        self.verticalLayout_11.addWidget(self.frame_23)
+
+        self.frame_24 = QFrame(self.frame_21)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setFrameShape(QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_24)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.label_9 = QLabel(self.frame_24)
+        self.label_9.setObjectName(u"label_9")
+
+        self.verticalLayout_14.addWidget(self.label_9)
+
+        self.inputEmail = QLineEdit(self.frame_24)
+        self.inputEmail.setObjectName(u"inputEmail")
+        self.inputEmail.setMaximumSize(QSize(300, 16777215))
+
+        self.verticalLayout_14.addWidget(self.inputEmail)
+
+
+        self.verticalLayout_11.addWidget(self.frame_24)
+
+        self.frame_25 = QFrame(self.frame_21)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setFrameShape(QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.frame_25)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.sendRentaFormBtn = QPushButton(self.frame_25)
+        self.sendRentaFormBtn.setObjectName(u"sendRentaFormBtn")
+        self.sendRentaFormBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/send.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.sendRentaFormBtn.setIcon(icon4)
+        self.sendRentaFormBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_14.addWidget(self.sendRentaFormBtn)
+
+        self.closeRentalFormBtn = QPushButton(self.frame_25)
+        self.closeRentalFormBtn.setObjectName(u"closeRentalFormBtn")
+        self.closeRentalFormBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.closeRentalFormBtn.setIcon(icon2)
+        self.closeRentalFormBtn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_14.addWidget(self.closeRentalFormBtn)
+
+
+        self.verticalLayout_11.addWidget(self.frame_25, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_17.addWidget(self.frame_21, 0, Qt.AlignHCenter)
+
+        self.mainPages.addWidget(self.pageRentalForm)
         self.pageAddCar = QWidget()
         self.pageAddCar.setObjectName(u"pageAddCar")
         self.verticalLayout_21 = QVBoxLayout(self.pageAddCar)
@@ -439,12 +601,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 40, 0, 20)
         self.labelErrorAddCar = QLabel(self.frame_4)
         self.labelErrorAddCar.setObjectName(u"labelErrorAddCar")
-        font3 = QFont()
-        font3.setBold(True)
-        font3.setItalic(False)
-        font3.setUnderline(False)
-        font3.setWeight(75)
-        self.labelErrorAddCar.setFont(font3)
+        font5 = QFont()
+        font5.setBold(True)
+        font5.setItalic(False)
+        font5.setUnderline(False)
+        font5.setWeight(75)
+        self.labelErrorAddCar.setFont(font5)
         self.labelErrorAddCar.setStyleSheet(u"color: red")
 
         self.verticalLayout_5.addWidget(self.labelErrorAddCar, 0, Qt.AlignHCenter)
@@ -486,9 +648,9 @@ class Ui_MainWindow(object):
         self.label_19 = QLabel(self.frame_3)
         self.label_19.setObjectName(u"label_19")
         self.label_19.setMaximumSize(QSize(16777215, 100))
-        font4 = QFont()
-        font4.setPointSize(8)
-        self.label_19.setFont(font4)
+        font6 = QFont()
+        font6.setPointSize(8)
+        self.label_19.setFont(font6)
         self.label_19.setStyleSheet(u"margin-top: 10px")
         self.label_19.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
@@ -505,7 +667,7 @@ class Ui_MainWindow(object):
         self.label_20 = QLabel(self.frame_3)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setMaximumSize(QSize(16777215, 100))
-        self.label_20.setFont(font4)
+        self.label_20.setFont(font6)
         self.label_20.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
         self.verticalLayout.addWidget(self.label_20)
@@ -620,9 +782,9 @@ class Ui_MainWindow(object):
         self.saveCarBtn = QPushButton(self.frame)
         self.saveCarBtn.setObjectName(u"saveCarBtn")
         self.saveCarBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/save.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.saveCarBtn.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/save.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.saveCarBtn.setIcon(icon5)
         self.saveCarBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.saveCarBtn, 0, Qt.AlignRight)
@@ -630,9 +792,9 @@ class Ui_MainWindow(object):
         self.previewImageBtn = QPushButton(self.frame)
         self.previewImageBtn.setObjectName(u"previewImageBtn")
         self.previewImageBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/image.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.previewImageBtn.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/image.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.previewImageBtn.setIcon(icon6)
         self.previewImageBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.previewImageBtn, 0, Qt.AlignHCenter)
@@ -640,9 +802,9 @@ class Ui_MainWindow(object):
         self.homeBtn = QPushButton(self.frame)
         self.homeBtn.setObjectName(u"homeBtn")
         self.homeBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.homeBtn.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.homeBtn.setIcon(icon7)
         self.homeBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_2.addWidget(self.homeBtn, 0, Qt.AlignLeft)
@@ -684,7 +846,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setContentsMargins(0, 40, 0, 20)
         self.labelErrorShell = QLabel(self.frame_9)
         self.labelErrorShell.setObjectName(u"labelErrorShell")
-        self.labelErrorShell.setFont(font3)
+        self.labelErrorShell.setFont(font5)
         self.labelErrorShell.setStyleSheet(u"color: red")
 
         self.verticalLayout_7.addWidget(self.labelErrorShell, 0, Qt.AlignHCenter)
@@ -715,9 +877,9 @@ class Ui_MainWindow(object):
         self.executeBtn = QPushButton(self.frame_17)
         self.executeBtn.setObjectName(u"executeBtn")
         self.executeBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/zap.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.executeBtn.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/zap.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.executeBtn.setIcon(icon8)
         self.executeBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_9.addWidget(self.executeBtn)
@@ -725,7 +887,7 @@ class Ui_MainWindow(object):
         self.choiceRolePage = QPushButton(self.frame_17)
         self.choiceRolePage.setObjectName(u"choiceRolePage")
         self.choiceRolePage.setCursor(QCursor(Qt.PointingHandCursor))
-        self.choiceRolePage.setIcon(icon6)
+        self.choiceRolePage.setIcon(icon7)
         self.choiceRolePage.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_9.addWidget(self.choiceRolePage)
@@ -764,9 +926,9 @@ class Ui_MainWindow(object):
         self.userModeBtn.setObjectName(u"userModeBtn")
         self.userModeBtn.setFont(font)
         self.userModeBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/shopping-cart.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.userModeBtn.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/shopping-cart.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.userModeBtn.setIcon(icon9)
         self.userModeBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_10.addWidget(self.userModeBtn, 0, Qt.AlignHCenter)
@@ -776,9 +938,9 @@ class Ui_MainWindow(object):
         self.adminModeBtn.setFont(font)
         self.adminModeBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.adminModeBtn.setMouseTracking(False)
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/user.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.adminModeBtn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/user.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.adminModeBtn.setIcon(icon10)
         self.adminModeBtn.setIconSize(QSize(24, 24))
         self.adminModeBtn.setCheckable(False)
 
@@ -839,7 +1001,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainPages.setCurrentIndex(3)
+        self.mainPages.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -866,6 +1028,15 @@ class Ui_MainWindow(object):
         self.closeBtn.setText("")
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0438 \u0432 \u0430\u0440\u0435\u043d\u0434\u0443", None))
         self.addCarBtn.setText("")
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u0424\u043e\u0440\u043c\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0437\u0430\u044f\u0432\u043a\u0438 \u043d\u0430 \u0430\u0440\u0435\u043d\u0434\u0443", None))
+        self.labelRentalForm.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0440\u0430\u0442\u043a\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043e\u043c  \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435:", None))
+        self.labelCarData.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e:", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043b\u0435\u0444\u043e\u043d:", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
+        self.sendRentaFormBtn.setText("")
+        self.closeRentalFormBtn.setText("")
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f", None))
         self.labelErrorAddCar.setText(QCoreApplication.translate("MainWindow", u"All fields must be filled", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u041c\u043e\u0434\u0435\u043b\u044c:", None))
