@@ -326,7 +326,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                 </font>
                </property>
                <property name="text">
-                <string>RecipeBook</string>
+                <string>CarRental</string>
                </property>
               </widget>
              </item>
@@ -1759,7 +1759,7 @@ p, li { white-space: pre-wrap; }
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item>
+          <item alignment="Qt::AlignRight">
            <widget class="QFrame" name="frame_10">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -1768,14 +1768,7 @@ p, li { white-space: pre-wrap; }
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_12">
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="text">
-                <string>Copyright LunexCoding</string>
-               </property>
-              </widget>
-             </item>
-             <item>
+             <item alignment="Qt::AlignRight">
               <widget class="QFrame" name="sizeGrip">
                <property name="minimumSize">
                 <size>

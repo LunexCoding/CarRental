@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceJxoRKv.ui'
+## Form generated from reading UI file 'interfaceQMqJQc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -974,11 +974,6 @@ class Ui_MainWindow(object):
         self.frame_10.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.label_15 = QLabel(self.frame_10)
-        self.label_15.setObjectName(u"label_15")
-
-        self.horizontalLayout_12.addWidget(self.label_15)
-
         self.sizeGrip = QFrame(self.frame_10)
         self.sizeGrip.setObjectName(u"sizeGrip")
         self.sizeGrip.setMinimumSize(QSize(30, 30))
@@ -986,10 +981,10 @@ class Ui_MainWindow(object):
         self.sizeGrip.setFrameShape(QFrame.StyledPanel)
         self.sizeGrip.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout_12.addWidget(self.sizeGrip)
+        self.horizontalLayout_12.addWidget(self.sizeGrip, 0, Qt.AlignRight)
 
 
-        self.horizontalLayout_11.addWidget(self.frame_10)
+        self.horizontalLayout_11.addWidget(self.frame_10, 0, Qt.AlignRight)
 
 
         self.verticalLayout_10.addWidget(self.footerContainer)
@@ -1013,7 +1008,7 @@ class Ui_MainWindow(object):
         self.headerContainer.setToolTip(QCoreApplication.translate("MainWindow", u"Profile", None))
 #endif // QT_CONFIG(tooltip)
         self.label_5.setText("")
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"RecipeBook", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"CarRental", None))
 #if QT_CONFIG(tooltip)
         self.minimizeBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize Window", None))
 #endif // QT_CONFIG(tooltip)
@@ -1092,6 +1087,5 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u043e\u043b\u044c", None))
         self.userModeBtn.setText(QCoreApplication.translate("MainWindow", u" \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c", None))
         self.adminModeBtn.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Copyright LunexCoding", None))
     # retranslateUi
 
