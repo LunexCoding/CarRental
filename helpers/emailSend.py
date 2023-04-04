@@ -1,12 +1,8 @@
 import smtplib
-from pathlib import Path
 
 from email_validator import validate_email, EmailNotValidError
 
 from settingsConfig import settingsConfig
-
-
-SETTINGS_CONFIG = Path("../settings.json")
 
 
 class _EmailSender:
