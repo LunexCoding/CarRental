@@ -14,4 +14,4 @@ class SqlQueries:
 
     @staticmethod
     def selectAllCars():
-        return "SELECT * FROM AutoService.cars"
+        return "SELECT * FROM cars"
